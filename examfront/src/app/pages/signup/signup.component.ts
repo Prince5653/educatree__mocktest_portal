@@ -1,5 +1,7 @@
 import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit  {
   constructor(
-    private userService:UserService
+    private userService:UserService,private snack:MatSnackBar
   ) {}
 
   public user={
@@ -27,45 +29,27 @@ export class SignupComponent implements OnInit  {
     console.log(this.user);
     if(this.user.username=='' || this.user.username==null)
     {
-      alert('Username is required !!')
+      // alert('Username is required !!')
+      this.snack.open("Username is required !!","",{duration:2500});
       return;
     }
-    console.log(this.user);
-    if(this.user.password=='' || this.user.password==null )
-    {
-      alert('Password is required !!')
-      return;
-    }
-    console.log(this.user);
-    if(this.user.firstName=='' || this.user.firstName==null)
-    {
-      alert('Firstname is required !!')
-      return;
-    }
+    //validate
 
-    console.log(this.user);
-    if(this.user.email=='' || this.user.email==null)
-    {
-      alert('email is required !!')
-      return;
-    }
-    console.log(this.user);
-    if(this.user.phone=='' || this.user.phone==null)
-    {
-      alert('Phone Number is required !!')
-      return;
-    }
+
+
     //add user:userservice
     this.userService.addUser(this.user).subscribe(
-      (data)=>{
+      (data:any)=>{
         //success
         console.log(data);
-        alert('success');
+        // alert('success');
+        Swal.fire('Registeration Done','User ID is '+data.id,'success');
       },
       (error)=>{
         //error
         console.log(error)
-        alert('something went wrong !!');
+        // alert('something went wrong !!');
+        this.snack.open('Something went wrong!!','',{duration:2500});
       }
     );
   }

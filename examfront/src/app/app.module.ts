@@ -12,7 +12,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
-import{HttpClientModule} from '@angular/common/http'
+import{HttpClientModule} from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import Swal from 'sweetalert2';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import{HttpClientModule} from '@angular/common/http'
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

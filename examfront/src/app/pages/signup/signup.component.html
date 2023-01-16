@@ -13,7 +13,7 @@
              <!-- username -->
              <mat-form-field class="full-width" appearance="outline">
               <mat-label>Username</mat-label>
-              <input
+              <input required
               [(ngModel)]="user.username"
               name="username"
               matInput placeholder="Enter Here">
@@ -22,7 +22,7 @@
             <!-- password -->
              <mat-form-field class="full-width" appearance="outline">
               <mat-label>Password</mat-label>
-              <input type="password"
+              <input required type="password"
               [(ngModel)]="user.password"
               name="password"
               matInput placeholder="Enter Here">
@@ -30,7 +30,7 @@
             <!-- firstname -->
              <mat-form-field class="full-width" appearance="outline">
               <mat-label>First Name</mat-label>
-              <input
+              <input required
               [(ngModel)]="user.firstName"
               name="firstName"
               matInput placeholder="Enter Here">
@@ -38,7 +38,7 @@
             <!-- lastname -->
              <mat-form-field class="full-width" appearance="outline">
               <mat-label>Last Name</mat-label>
-              <input
+              <input required
               [(ngModel)]="user.lastName"
               name="lastName"
               matInput placeholder="Enter Here">
@@ -46,7 +46,7 @@
             <!-- email -->
              <mat-form-field class="full-width" appearance="outline">
               <mat-label>Email Address</mat-label>
-              <input type="email"
+              <input required type="email"
               [(ngModel)]="user.email"
               name="email"
               matInput placeholder="Enter Here">
@@ -54,7 +54,7 @@
             <!-- phone -->
              <mat-form-field class="full-width" appearance="outline">
               <mat-label>Phone Number</mat-label>
-              <input type="number" ng-maxlength="10"
+              <input required type="number" ng-maxlength="10"
               [(ngModel)]="user.phone"
               name="phone"
               matInput placeholder="Enter Here">
