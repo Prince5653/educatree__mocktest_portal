@@ -4,6 +4,7 @@ import com.exam.model.User;
 import com.exam.model.UserRole;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public interface UserService {
 
@@ -15,5 +16,9 @@ public interface UserService {
 
     //delete user by id
     public void deleteUser(Long userId);
+    //update user by username
+
+
+
 
 }
