@@ -1,6 +1,7 @@
 package com.exam.controller;
 
 import com.exam.config.JwtUtils;
+import com.exam.helper.UserFoundException;
 import com.exam.model.JwtRequest;
 import com.exam.model.JwtResponse;
 import com.exam.model.User;
@@ -37,12 +38,10 @@ public class AuthenticateController {
         {
             authenticate(jwtRequest.getUsername(), jwtRequest.getPassword());
 
-        }catch (UsernameNotFoundException e)
+        }catch (UserFoundException e)
         {
             e.printStackTrace();
             throw new Exception("User not found");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
         //////////////////authenticate//////////////////////////authenticate////////////////////////////
 

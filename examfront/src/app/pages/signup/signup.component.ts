@@ -48,8 +48,8 @@ export class SignupComponent implements OnInit  {
       (error)=>{
         //error
         console.log(error)
-        // alert('something went wrong !!');
-        this.snack.open('Something went wrong!!','',{duration:2500});
+        // alert('Userfound exception');
+        this.snack.open('Username already exists, try with another one !!','',{duration:2500});
       }
     );
   }

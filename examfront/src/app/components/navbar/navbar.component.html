@@ -13,7 +13,7 @@
   <mat-icon svgIcon="github"></mat-icon>
   Github
  </a>
- <button  *ngIf="isLoggedIn && user"  mat-button   aria-label="nav-username"> {{user.username}} </button>
+ <button  *ngIf="isLoggedIn && user"  mat-button routerLink="/admin/profile"  aria-label="nav-username"> {{user.username}} </button>
 
  <a (click)="logout()" *ngIf="isLoggedIn"  mat-flat-button class="nav-logout" color="primary" aria-label="nav-register-logout"> Logout </a>
 </mat-toolbar>

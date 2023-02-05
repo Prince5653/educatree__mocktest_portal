@@ -1,0 +1,47 @@
+<mat-card  >
+  <h1 class="ml20 mt10">My Profile Details</h1>
+
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="container">
+       <div class="container text-center">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAIIAggMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAwUBAgYEB//EADMQAQACAQIDAgwGAwAAAAAAAAABAwIEEQUhMUFREhMVIjRTYXGBkaGxIzIzUmJzJILB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFxEBAQEBAAAAAAAAAAAAAAAAAAERMf/aAAwDAQACEQMRAD8A+iANsgAAAAAAAAAAAAAAzsAwAAAAAAJtPprtRltVhvH7ux7sODZzH4l2MT/GNzVVYs8+DZxHmXYz742eC6i3T5eDbhOPdPZKaIwFQAAAAAAAAAAT6TT5aq6K46dcp7oQSueB17U52THPKdvhCVVhVVhVXjhXjtjEcobssMqI76sb6sq843xlIyDl9RTlp7cq8+sdPbCJb8cqjau2I5/llUNSoAKgAAAAAAABLoOEeg1++fu5+V1wS3ejKvfnhP0lKqzAZUABX8aj/D/3hRLfjtvmV1RPWfCmFRDUSgCoAAAAAAAAJ9HqJ018WRzjplHfCAKrqq88bMIzwnfGecS3c1pNbdpd4w87Gec4ysq+M0zj+JhnjPs5s4qzR324U15WWTtjjCvt4zXEfhV5ZT/LlCt1est1WUeMmIiOmMdDBpqrstRdlbl29I7kYNIACAAAAAAALPh/DfGRFuox83sxntLVeGmi6+dqq5n29j2YcHvnnlnXj8ZldY444YxGMRER2RDZnVUvka31uHyljyLb67D5Suw0UnkW312Hyk8i2+uw+UrsNFDlwnU4/lmvL3S8t1F1P6teWMd+3L5uoYmImNp5x3Gpjkxb6/hkbTbpo2ntwj/ioa6AAgAAAK9/CdN467xmUb4YfWV8g0VPiNNXX2xG8+9OxVAAAAAAAAFHxjSxTbF2EbY5zzjulePLxGvxmitjbeYx8KPhzIOcCBtkAAb0x4V1ePflEfVol0vpVP8AZj9wdQAw0AAAAAAAANLv0bN/2y3a5xvhlHfAOUjoEdBtAAQS6b0mn+zH7gDqAGGgAAAAAAABgAcmA2gAI//Z" class="profile-image" alt="profile img">
+      </div>
+      <h1 class="mt20 text-center">{{user.firstName}} {{user.lastName}}</h1>
+
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <!-- table details -->
+            <table class="table text-center">
+              <tr>
+                <td>Username</td>
+                <td>{{user.username}}</td>
+              </tr>
+              <tr>
+                <td>Id</td>
+                <td>EDU{{user.id}}</td>
+              </tr>
+              <tr>
+                <td>E-mail</td>
+                <td>{{user.email}}</td>
+              </tr>
+              <tr>
+                <td>Contact Number</td>
+                <td>{{user.phone}}</td>
+              </tr>
+              <tr>
+                <td>Role</td>
+                <td>{{user.authorities[0].authority}}</td>
+              </tr>
+              <tr>
+                <td>Status</td>
+                <td>{{user.enabled?"ACTIVE":"INACTIVE"}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+
+</mat-card>
