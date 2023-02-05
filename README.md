@@ -34,5 +34,5 @@ required functionalities of a mock test portal along with two different UI (Admi
 - After a successful login , sweetalert gives ID of the user.
 
 # Credits
-- <a href="https://github.com/rahul87911">Rahul Mishra</a>
+- <a href="https://github.com/rahul87911">RAHUL MISHRA</a> 
 - Thanks for visiting here.
