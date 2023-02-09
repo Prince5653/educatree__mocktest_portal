@@ -1,0 +1,58 @@
+<mat-card>
+  <h1 class="ml20 mt10">Add Quiz</h1>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+
+      <form (ngSubmit)="addQuiz()">
+        <!-- title -->
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Enter Title</mat-label>
+        <input [(ngModel)]="quizData.title" type="text" name="title" placeholder="Enter here" matInput />
+      </mat-form-field>
+        <!-- description -->
+        <mat-form-field class="w100" appearance="fill">
+          <mat-label>Enter Description</mat-label>
+          <textarea [(ngModel)]="quizData.description"  type="text" name="description" placeholder="Enter here" matInput rows="5" ></textarea>
+        </mat-form-field>
+
+        <div class="row">
+          <div class="col-md-6">
+            <!-- maxmarks -->
+            <mat-form-field class="w100" appearance="fill">
+              <mat-label>Maximum Marks</mat-label>
+              <input [(ngModel)]="quizData.maxMarks"  type="number" name="maxMarks" placeholder="Enter here" matInput />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <!-- numberofqquestions -->
+            <mat-form-field class="w100" appearance="fill">
+              <mat-label>Number of Questions</mat-label>
+              <input [(ngModel)]="quizData.numberOfQuestions"  type="number" name="numberOfQuestions" placeholder="Enter here" matInput />
+            </mat-form-field>
+          </div>
+        </div>
+         <!-- active -->
+         <mat-slide-toggle [(ngModel)]="quizData.active" name="active"  class="mt10 mb20">
+          Publish
+         </mat-slide-toggle>
+
+         <!-- category -->
+         <mat-form-field appearance="fill" class="ml40">
+          <mat-label>Category</mat-label>
+          <mat-select  name="category" [(ngModel)]="quizData.category.cid" >
+            <mat-option *ngFor="let c of categories" [value]="c.cid">
+              {{c.title}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="ml115">Add</button>
+        <button type="reset" mat-raised-button color="primary" class="ml20">Reset</button>
+      </form>
+
+
+    </div>
+  </div>
+  </div>
+</mat-card>
+

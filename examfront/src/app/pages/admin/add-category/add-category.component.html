@@ -5,12 +5,12 @@
       <div class="row">
         <div class="col-md-8 offset-md-2">
           <form (ngSubmit)="formSubmit()">
-            <mat-form-field class="w100" appearance="outline">
+            <mat-form-field class="w100" appearance="fill">
             <mat-label>Title</mat-label>
             <input  autofocus type="text" name="title" matInput placeholder="Enter here" [(ngModel)]="category.title" />
             </mat-form-field>
 
-            <mat-form-field class="w100" appearance="outline">
+            <mat-form-field class="w100" appearance="fill">
             <mat-label>Description</mat-label>
             <textarea name="description" matInput placeholder="Enter Description" rows="12" [(ngModel)]="category.description"></textarea>
             </mat-form-field>
