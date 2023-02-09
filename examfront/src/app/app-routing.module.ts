@@ -1,7 +1,9 @@
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { NormalGuard } from './services/normal.guard';
 import { AdminGuard } from './services/admin.guard';
 import { SignupComponent } from './pages/signup/signup.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -9,6 +11,7 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import {ViewCategoriesComponent} from "./pages/admin/view-categories/view-categories.component";
 
 const routes: Routes = [
   {
@@ -26,6 +29,7 @@ const routes: Routes = [
     component: LoginComponent,
     pathMatch:'full',
   },
+
   {
     path:'admin',
     component: DashboardComponent,
@@ -39,8 +43,21 @@ const routes: Routes = [
         path:'profile',
         component: ProfileComponent,
       },
+      {
+        path:'categories',
+        component:ViewCategoriesComponent,
+      },
+      {
+        path:'add-category',
+        component:AddCategoryComponent,
+      },
+      {
+        path:'quizzes',
+        component:ViewQuizzesComponent,
+      },
     ],
   },
+
   {
     path:'user-dashboard',
     component: UserDashboardComponent,
