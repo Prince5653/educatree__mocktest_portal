@@ -20,6 +20,7 @@
   <button mat-stroked-button color="accent" class="ml20">Max Marks: {{q.maxMarks}}</button>
   <button mat-stroked-button color="accent" class="ml10">Questions: {{q.numberOfQuestions}}</button>
   <button mat-stroked-button color="accent" class="ml10">Status: {{q.active?"Active":"Inactive"}}</button>
+  <button mat-flat-button class="ml20" (click)="deleteQuiz(q.qId)" ><mat-icon >delete</mat-icon></button>
 </mat-card-actions>
 </mat-card>
 

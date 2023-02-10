@@ -3,13 +3,15 @@
   <mat-list>
     <mat-list-item *ngFor="let c of categories" >
       <mat-icon matListItemIcon >category</mat-icon>
-      <div matListItemTitle>{{c.title}}</div>
+      <div matListItemTitle>{{c.title}} </div>
       <div matListItemLine>{{c.description}}</div>
-      <button matListItem-icon-button><mat-icon>delete</mat-icon></button>
+      <button mat-icon-button  matListItemMeta (click)="deleteCategory(c.cid)">
+        <mat-icon>delete</mat-icon>
+     </button>
+      <hr>
     </mat-list-item>
-    <mat-divider></mat-divider>
-
   </mat-list>
+
 
   <div class="container text-center mt10 mb20">
    <button routerLink="/admin/add-category" mat-raised-button color="primary">Add New Category</button>

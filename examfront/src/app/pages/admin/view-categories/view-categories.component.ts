@@ -23,4 +23,28 @@ export class ViewCategoriesComponent implements OnInit {
       Swal.fire("Error !!", "Error in loading data", 'error');
      });
   }
+  //delete-category
+  deleteCategory(cid:any)
+  {
+    Swal.fire({
+      icon:'warning',
+      title:"Are you sure ?",
+      confirmButtonText:'Delete',
+      showCancelButton: true,
+     }).then((result)=>{
+      if(result.isConfirmed)
+      {
+        //delete
+        this._category.deleteCategory(cid).subscribe(
+          (data)=>{
+            this.categories=this.categories.filter((Category:any)=>Category.cid!=cid);
+            Swal.fire('Success','Category Deleted','success');
+          },
+          (error)=>{
+            Swal.fire("Error !!", "Error in deleting data", 'error');
+          }
+         );
+      }
+     })
+  }
 }
