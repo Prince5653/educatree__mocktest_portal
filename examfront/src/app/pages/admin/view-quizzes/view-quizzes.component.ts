@@ -42,7 +42,7 @@ export class ViewQuizzesComponent implements OnInit {
   {
    Swal.fire({
     icon:'warning',
-    title:"Are you sure ?",
+    title:"Are you sure to delete this quiz ?",
     confirmButtonText:'Delete',
     showCancelButton: true,
    }).then((result)=>{

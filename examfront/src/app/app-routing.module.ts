@@ -1,3 +1,7 @@
+import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { NormalGuard } from './services/normal.guard';
@@ -60,6 +64,22 @@ const routes: Routes = [
         path:'add-quiz',
         component:AddQuizComponent,
       },
+      {
+        path:'quiz/:qid',
+        component:UpdateQuizComponent,
+      },
+      {
+        path:'view-questions/:qid/:title',
+        component:ViewQuizQuestionsComponent,
+      },
+      {
+        path:'add-question/:qid/:title',
+        component:AddQuestionComponent,
+      },
+      {
+        path:'question/:qid/:title/:quesid',
+        component:UpdateQuestionComponent,
+      }
     ],
   },
 

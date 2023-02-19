@@ -48,13 +48,30 @@ export class AddQuizComponent  implements OnInit{
       //add-quiz
       addQuiz()
       {
+        //validation
         if(this.quizData.title.trim()=='' || this.quizData.title==null)
         {
          this._snack.open("Title Required !!",'',{duration:3000,});
         return;
         }
 
-        //validation
+        if(this.quizData.maxMarks.trim()=='' || this.quizData.maxMarks==null)
+        {
+         this._snack.open("Maximum Marks is required !!",'',{duration:3000,});
+        return;
+        }
+        if(this.quizData.numberOfQuestions.trim()=='' || this.quizData.numberOfQuestions==null)
+        {
+         this._snack.open("Number of Questions is required !!",'',{duration:3000,});
+        return;
+        }
+        if(this.quizData.category.cid.trim()=='' || this.quizData.category.cid==null)
+        {
+         this._snack.open("Category Required !!",'',{duration:3000,});
+        return;
+        }
+
+
         //call_server
         this._quiz.addQuiz(this.quizData).subscribe(
           (data)=>{

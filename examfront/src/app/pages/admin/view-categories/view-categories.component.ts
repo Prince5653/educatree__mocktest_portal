@@ -28,7 +28,7 @@ export class ViewCategoriesComponent implements OnInit {
   {
     Swal.fire({
       icon:'warning',
-      title:"Are you sure ?",
+      title:"Are you sure to delete this category ?",
       confirmButtonText:'Delete',
       showCancelButton: true,
      }).then((result)=>{
