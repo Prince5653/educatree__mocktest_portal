@@ -14,7 +14,7 @@
         <mat-card-content>
 
 
-          <form class="mt20" (submit)="formSubmit()">
+          <form class="mt20" (submit)="formSubmit()" *ngIf="qlength != qNumberOfQuestions">
 
          <ckeditor  class="editor" [editor]="Editor" name="content" [(ngModel)]="question.content"></ckeditor>
 

@@ -12,16 +12,21 @@ export class ViewQuizQuestionsComponent implements OnInit{
 
   qId:any;
   qTitle:any;
+  qNumberOfQuestions:any;
   questions:any= [];
+  i:any;
+
 
   constructor (private _route:ActivatedRoute, private _question:QuestionService) {}
 
   ngOnInit(): void {
+  this.qNumberOfQuestions=this._route.snapshot.params['numberofquestions'];
   this.qId=this._route.snapshot.params['qid'];
   this.qTitle=this._route.snapshot.params['title'];
   this._question.getQuestionsOfQuiz(this.qId).subscribe((data:any)=>{
     console.log(data);
     this.questions=data;
+    this.i=this.questions.length;
   },(error)=>{
     console.log(error);
   })
@@ -40,7 +45,9 @@ export class ViewQuizQuestionsComponent implements OnInit{
         //if delete is confirmed
         this._question.deleteQuestion(qid).subscribe(
           (data)=>{
-            Swal.fire('Success','Qusetion Deleted','success');
+            Swal.fire('Success','Qusetion Deleted','success').then(function() {
+              window.location.reload();
+          });
             this.questions=this.questions.filter((q:any)=>q.quesId!=qid);
           },
           (error)=>{

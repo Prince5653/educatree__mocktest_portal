@@ -50,31 +50,16 @@ export class UpdateQuizComponent  implements OnInit{
   public updateData(){
 
     //validations
-    if(this.quiz.title.trim()=='' || this.quiz.title==null)
+        if(this.quiz.title.trim()=='' || this.quiz.title==null)
         {
          this._snack.open("Title Required !!",'',{duration:3000,});
         return;
         }
-
         if(this.quiz.maxMarks.trim()=='' || this.quiz.maxMarks==null)
         {
-         this._snack.open("Maximum Marks is required !!",'',{duration:3000,});
-        return;
+          this._snack.open("Maximum Marks is required !!",'',{duration:3000,});
+          return;
         }
-        if(this.quiz.numberOfQuestions.trim()=='' || this.quiz.numberOfQuestions==null)
-        {
-         this._snack.open("Number of Questions is required !!",'',{duration:3000,});
-        return;
-        }
-        if(this.quiz.category.cid.trim()=='' || this.quiz.category.cid==null)
-        {
-         this._snack.open("Category Required !!",'',{duration:3000,});
-        return;
-        }
-
-
-
-
       this._quiz.updateQuiz(this.quiz).subscribe(
         (data:any)=>{Swal.fire('Success','Quiz Updated Successfully','success').then((e)=>{
          this._router.navigate(['/admin/quizzes']);

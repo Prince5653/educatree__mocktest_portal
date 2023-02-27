@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="container text-center">
-        <button [routerLink]="'/admin/add-question/'+qId+'/'+qTitle" mat-raised-button color="primary">Add Question</button>
+        <button *ngIf="i != qNumberOfQuestions && i < qNumberOfQuestions" [routerLink]="'/admin/add-question/'+qId+'/'+qTitle+'/'+qNumberOfQuestions+'/'+i" mat-raised-button color="primary">Add Question</button>
       </div>
       <mat-card *ngFor="let q of questions ; let i = index" class="mt20">
         <mat-card-content>
@@ -32,7 +32,7 @@
         </mat-card-content>
         <mat-card-actions class="ml20" >
           <button mat-button (click)="deleteQuestion(q.quesId)"> <mat-icon>delete</mat-icon></button>
-          <button [routerLink]="'/admin/question/'+qId+'/'+qTitle+'/'+q.quesId" mat-button class="ml10" > <mat-icon><span> upgrade </span></mat-icon></button>
+          <button [routerLink]="'/admin/question/'+qId+'/'+qTitle+'/'+q.quesId+'/'+qNumberOfQuestions" mat-button class="ml10" > <mat-icon><span> upgrade </span></mat-icon></button>
         </mat-card-actions>
       </mat-card>
     </div>

@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
@@ -15,6 +15,8 @@ export class AddQuestionComponent implements OnInit {
 
 qId:any;
 qTitle:any;
+qlength:any;
+qNumberOfQuestions:any;
 question={
   quiz:{qId:'',},
   content:'',
@@ -26,12 +28,14 @@ question={
 };
 
 
-  constructor(private _route:ActivatedRoute, private _question:QuestionService) {}
+  constructor(private _route:ActivatedRoute, private _question:QuestionService,private _router:Router) {}
 
   ngOnInit(): void {
+      this.qNumberOfQuestions=this._route.snapshot.params['numberofquestions'];
       this.qId=this._route.snapshot.params['qid'];
       this.question.quiz['qId'] = this.qId;
       this.qTitle=this._route.snapshot.params['title'];
+      this.qlength=this._route.snapshot.params['i'];
   }
 
   formSubmit(){
@@ -87,13 +91,9 @@ question={
    //submit
    this._question.addQuestion(this.question).subscribe(
     (data:any)=>{
-      Swal.fire('Success','Question Added Successfully','success');
-      this.question.content='';
-      this.question.option1='';
-      this.question.option2='';
-      this.question.option3='';
-      this.question.option4='';
-      this.question.answer='';
+      Swal.fire('Success','Question Added Successfully','success').then((e)=>{
+        this._router.navigate(['/admin/view-questions/'+this.qId+'/'+this.qTitle+'/'+this.qNumberOfQuestions]);
+      });
     },
     (error)=>{
       Swal.fire("Error !!", "Server didn't respond", 'error');

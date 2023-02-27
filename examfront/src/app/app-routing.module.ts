@@ -69,15 +69,15 @@ const routes: Routes = [
         component:UpdateQuizComponent,
       },
       {
-        path:'view-questions/:qid/:title',
+        path:'view-questions/:qid/:title/:numberofquestions',
         component:ViewQuizQuestionsComponent,
       },
       {
-        path:'add-question/:qid/:title',
+        path:'add-question/:qid/:title/:numberofquestions/:i',
         component:AddQuestionComponent,
       },
       {
-        path:'question/:qid/:title/:quesid',
+        path:'question/:qid/:title/:quesid/:numberofquestions',
         component:UpdateQuestionComponent,
       }
     ],

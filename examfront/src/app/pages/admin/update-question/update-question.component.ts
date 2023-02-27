@@ -14,7 +14,7 @@ export class UpdateQuestionComponent implements OnInit {
   public Editor:any = ClassicEditor;
   quesId = 0;
   question:any;
-
+  qNumberOfQuestions:any;
   qId:any;
   qTitle:any;
 
@@ -22,6 +22,7 @@ export class UpdateQuestionComponent implements OnInit {
   constructor (private _route:ActivatedRoute, private _question:QuestionService, private _router:Router,private _quiz:QuizService){}
 
   ngOnInit(): void {
+      this.qNumberOfQuestions=this._route.snapshot.params['numberofquestions'];
       this.qId=this._route.snapshot.params['qid'];
       this.qTitle=this._route.snapshot.params['title'];
       this.quesId = this._route.snapshot.params['quesid'];
@@ -83,7 +84,7 @@ if(this.question.option1.trim() == '' || this.question.option1 == null &&
 
    this._question.updateQuestion(this.question).subscribe((data)=>{
     Swal.fire('Success','Question Updated successfully','success').then((e)=>{
-      this._router.navigate(['/admin/view-questions/'+this.qId+'/'+this.qTitle]);
+      this._router.navigate(['/admin/view-questions/'+this.qId+'/'+this.qTitle+'/'+this.qNumberOfQuestions]);
 
     });
    },(error)=>{
