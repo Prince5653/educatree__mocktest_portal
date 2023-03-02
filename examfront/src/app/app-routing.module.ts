@@ -1,3 +1,5 @@
+
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
@@ -86,8 +88,13 @@ const routes: Routes = [
   {
     path:'user-dashboard',
     component: UserDashboardComponent,
-    pathMatch:'full',
     canActivate:[NormalGuard],
+    children:[
+      {
+        path:':catId',
+        component:LoadQuizComponent,
+      }
+    ]
   },
 
 ];

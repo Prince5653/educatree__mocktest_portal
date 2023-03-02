@@ -4,7 +4,6 @@ import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,8 +38,10 @@ import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/vi
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import {SidebarComponent as UserSidebar} from './pages/user/sidebar/sidebar.component'
-
+import {SidebarComponent as UserSidebar} from './pages/user/sidebar/sidebar.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { UserHomeComponent } from './pages/user/user-home/user-home.component'
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +64,8 @@ import {SidebarComponent as UserSidebar} from './pages/user/sidebar/sidebar.comp
     AddQuestionComponent,
     UpdateQuestionComponent,
     UserSidebar,
+    LoadQuizComponent,
+    UserHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,6 +86,7 @@ import {SidebarComponent as UserSidebar} from './pages/user/sidebar/sidebar.comp
     MatSelectModule,
     MatDividerModule,
     CKEditorModule,
+    MatPaginatorModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

@@ -1,0 +1,21 @@
+.card {
+
+  margin: 4px;
+}
+
+.header-image {
+  background-image: url('../../../../assets/test.png');
+  background-size: cover;
+}
+
+.truncate{
+  display: block;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ml{
+  margin-left: 2px;
+}
