@@ -20,7 +20,6 @@ export class LoadQuizComponent implements OnInit{
   constructor(private _route:ActivatedRoute, private _quiz:QuizService,private _snack:MatSnackBar){}
 
   ngOnInit(): void {
-
      this._route.params.subscribe((params)=>{
       this.catId=params['catId'];
       if(this.catId==0){

@@ -1,0 +1,46 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card>
+          <mat-card-header>
+           <h1>Read the instructions carefully</h1>
+          <mat-divider></mat-divider>
+          </mat-card-header>
+          <mat-card-content class="mt10">
+          <h1><b>{{quiz.title}}</b></h1>
+          <p>{{quiz.description}}</p>
+          <mat-divider></mat-divider>
+          <h1 class="mt10">Important Instructions</h1>
+           <ul>
+            <li>This quiz is only for practice purpose.</li>
+            <li>Test can be taken on devices such as Laptop/ Smart-Phone/ Tablet/ Desktop. <b> Charge the Laptop / Smart Phone / Tablet well in advance to last for at least 2 hours.</b> </li>
+            <li>The device should have continuous internet connectivity. Do not share the phone's hotspot with any other device while writing the Mock Test. </li>
+            <li>Total duration of the examination is <b>{{quiz.numberOfQuestions*2}} minutes</b>, submit before the mentioned time. </li>
+            <li>Mock / dry run examination is mandatory. It is intended to familiarize the students to the examination environment and validate the compatibility of their Desktop/Laptop/Smart-Phone/Tablet or other devices. If a student encounters any technical issue, he/she can contact the help desk number(s) as notified here. </li>
+            <li>Do NOT take photos, screen shots, hear audio, or record videos of the examination and then share it with others during the online examination, a remote proctor would watch such unwanted activities. If found doing such activities, it will be treated as malpractice.</li>
+            <li>Each question contains <b>{{quiz.maxMarks/quiz.numberOfQuestions}} Marks</b>.</li>
+            <li>All questions are of MCQ types.</li>
+            <li>You canattempt this quiz any number of times.</li>
+          </ul>
+          <mat-divider></mat-divider>
+
+          <h1>Attempting Quiz</h1>
+          <ul>
+            <li>Click <b>Start Test</b> button to start the test.</li>
+            <li>The time will start the moment you click the <b>Start Test</b> button.</li>
+            <li>You cannot resume this quiz , if interrupted due to any reason.</li>
+            <li>Scroll Down to move to next question.</li>
+            <li>Click on <b>Submit</b> button on completion of the test.</li>
+            <li>Test will get automatically submitted on completion of time.</li>
+            <li>Report of the test is automatically generated in the form of PDF copy.</li>
+          </ul>
+          </mat-card-content>
+          <mat-card-actions  class="btn">
+            <button mat-raised-button color="primary">Start Test</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

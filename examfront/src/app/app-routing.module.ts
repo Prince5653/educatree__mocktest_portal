@@ -1,3 +1,4 @@
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
@@ -93,6 +94,10 @@ const routes: Routes = [
       {
         path:':catId',
         component:LoadQuizComponent,
+      },
+      {
+        path:'instructions/:qid',
+        component:InstructionsComponent,
       }
     ]
   },

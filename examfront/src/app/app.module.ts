@@ -42,6 +42,8 @@ import {SidebarComponent as UserSidebar} from './pages/user/sidebar/sidebar.comp
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { UserHomeComponent } from './pages/user/user-home/user-home.component'
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { StartComponent } from './pages/user/start/start.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +68,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     UserSidebar,
     LoadQuizComponent,
     UserHomeComponent,
+    InstructionsComponent,
+    StartComponent,
   ],
   imports: [
     BrowserModule,
