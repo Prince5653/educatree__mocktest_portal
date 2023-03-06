@@ -1,10 +1,20 @@
 <div class="bootstrap-wrapper" *ngIf="!isSubmit">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-2">
-  Instructions
+      <div class="col-md-2 mt70">
+         <mat-card>
+          <h1 class="mt10 text-center">Examinee Details</h1>
+          <mat-divider></mat-divider>
+         <mat-card-content>
+          <h4 class="mt10">Name: {{user.firstName}} {{ user.lastName}}</h4>
+          <h4>UserId: {{user.id}}</h4>
+          <mat-divider></mat-divider>
+         </mat-card-content>
+        </mat-card>
       </div>
-      <div class="col-md-8">
+
+
+      <div class="col-md-7">
        <ng-container  *ngIf="questions">
         <h1>Test: <b>{{questions[0].quiz.title}}</b></h1>
 
@@ -47,19 +57,38 @@
            </mat-radio-group>
 
         </mat-card>
-
-        <div class=" text-center container mt20 mb10">
-          <button (click)="submitQuiz()" mat-raised-button color="primary">Submit</button>
-        </div>
        </ng-container>
       </div>
 
-      <div class="col-md-2">
-
+      <!-- right-side -->
+      <div class="col-md-3">
+        <mat-card class="mt70">
+         <h2 class="text-center mb10 mt10">Progress Dial</h2>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <mat-spinner class="spin mt10 mb10" mode="determinate" color="accent" [value]="(timer/(this.questions.length*2*60))*100"></mat-spinner>
+            <mat-divider></mat-divider>
+            <h1 class="text-center mt10"><b> {{getFormattedTime()}} </b></h1>
+            <mat-divider></mat-divider>
+            <div class="row" *ngIf="questions">
+             <div class="col-md-4" *ngFor="let q of questions; let i=index">
+                  <button class="mt10 btn" mat-flat-button color="primary">{{i+1}}</button>
+             </div>
+            </div>
+            <mat-divider class="mt10"></mat-divider>
+            <div class=" text-center container mt10 mb10">
+              <button (click)="submitQuiz()" mat-raised-button color="primary">Submit</button>
+            </div>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
 
 
 <div class="bootstrap-wrapper" *ngIf="isSubmit">
@@ -84,6 +113,7 @@
     </div>
   </div>
 </div>
+
 
 
 

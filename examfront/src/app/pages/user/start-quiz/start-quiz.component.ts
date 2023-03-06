@@ -1,3 +1,4 @@
+import { LoginService } from './../../../services/login.service';
 import { QuestionService } from './../../../services/question.service';
 import { ActivatedRoute } from '@angular/router';
 import { LocationStrategy } from '@angular/common';
@@ -18,6 +19,8 @@ export class StartQuizComponent implements OnInit {
   isSubmit=false;
   state:any;
   cid:any;
+  timer:any;
+  user:any=null;
 
   marksGot=0;
   correctAnswers=0;
@@ -25,7 +28,7 @@ export class StartQuizComponent implements OnInit {
   marked=0;
   unattempted=0;
 
-   constructor(private _location:LocationStrategy,private _route:ActivatedRoute, private _question:QuestionService) {}
+   constructor(private _location:LocationStrategy,private _route:ActivatedRoute, private _question:QuestionService,private _user:LoginService) {}
 
    ngOnInit(): void {
      this.preventBack();
@@ -36,16 +39,22 @@ export class StartQuizComponent implements OnInit {
      this.cid=this._route.snapshot.params['cid'];
      this.loadQuestions();
 
+     this.user = this._user.getUser();
+
    }
 
    //loading-questions
    loadQuestions(){
     this._question.getQuestionsOfQuizForTest(this.qid).subscribe((data:any)=>{
       this.questions=data;
+
+      this.timer=this.questions.length*2*60;
+
       this.questions.forEach((q:any)=>{
        q['givenAnswer']='';
       });
       console.log(this.questions);
+      this.startTimer();
     },
     (error)=>{
       Swal.fire("Error","Error in Loading Questions", 'error');
@@ -103,9 +112,52 @@ export class StartQuizComponent implements OnInit {
    }
 
 
+   timesUp()
+   {
+    this.isSubmit =true;
+    this.questions.forEach((q:any)=>{
+       if(q.givenAnswer==q.answer)
+       {
+        this.correctAnswers++;
+        let marksSingle=this.questions[0].quiz.maxMarks/this.questions[0].quiz.numberOfQuestions;
+        this.marksGot += marksSingle;
+
+       }
+
+       if(q.givenAnswer.trim()!='')
+       {
+        this.attempted++;
+        this.unattempted= this.questions.length-this.attempted;
+       }
+   });
+  }
 
    reset() {
     this.questions.givenAnswer ='';
     }
+
+
+    startTimer()
+    {
+      let t = window.setInterval(()=>{
+        //code
+        if(this.timer<=0)
+        {
+          this.timesUp();
+          clearInterval(t);
+        }else{
+          this.timer--;
+        }
+      },1000);
+    }
+
+    getFormattedTime()
+    {
+    let mm = Math.floor(this.timer / 60);
+    let ss= this.timer -mm *60;
+    return `${mm} min : ${ss} sec`;
+    }
+
+
 
 }

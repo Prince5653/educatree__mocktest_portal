@@ -1,3 +1,21 @@
 .mat-mdc-radio-button ~ .mat-mdc-radio-button {
   margin-left: 16px;
 }
+
+.mt70{
+  margin-top: 50px;
+}
+
+.spin{
+  margin: auto;
+}
+
+.pr{
+  text-align: center;
+}
+
+.btn{
+  border-radius: 50%;
+}
+
+

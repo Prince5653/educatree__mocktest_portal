@@ -46,6 +46,7 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
 import { ViewQuizComponent } from './pages/user/view-quiz/view-quiz.component';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -96,6 +97,7 @@ import {MatRadioModule} from '@angular/material/radio';
     CKEditorModule,
     MatPaginatorModule,
     MatRadioModule,
+    MatProgressSpinnerModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
