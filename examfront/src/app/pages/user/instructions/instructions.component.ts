@@ -1,7 +1,8 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { QuizService } from './../../../services/quiz.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-instructions',
@@ -11,11 +12,13 @@ import { Component, OnInit } from '@angular/core';
 export class InstructionsComponent implements OnInit {
  qid:any;
  quiz:any;
+ cid:any;
 
-  constructor (private _route:ActivatedRoute,private _quiz:QuizService, private _snack:MatSnackBar) {}
+  constructor (private _route:ActivatedRoute,private _quiz:QuizService, private _snack:MatSnackBar,private _router:Router) {}
 
   ngOnInit(): void {
       this.qid=this._route.snapshot.params['qid'];
+      this.cid=this._route.snapshot.params['cid'];
       this._quiz.getQuiz(this.qid).subscribe(
         (data:any)=>{
           this.quiz=data;
@@ -25,6 +28,21 @@ export class InstructionsComponent implements OnInit {
           this._snack.open("Server didn't respond !!",'',{duration:3000,});
         }
       )
+  }
+
+  startQuiz()
+  {
+Swal.fire({
+  title: 'Do you want to start the test ?',
+  icon:'question',
+  showCancelButton: true,
+  confirmButtonText: 'Start',
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+  if (result.isConfirmed) {
+   this._router.navigate(['/start/'+this.cid+'/'+this.qid])
+  }
+})
   }
 
 }

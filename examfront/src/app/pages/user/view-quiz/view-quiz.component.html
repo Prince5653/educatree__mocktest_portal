@@ -1,0 +1,24 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card>
+          <mat-card-header> <h1> Test Id: {{qId}} </h1> </mat-card-header>
+          <mat-divider></mat-divider>
+          <div class="ml17 mt10">
+          <h3><b>Title: {{quizzes.title}}</b></h3>
+          <h4>Category: {{quizzes.category.title}}</h4>
+          <h4>Category Id: {{quizzes.category.cid}}</h4>
+          <h3><b>Number of Questions: {{quizzes.numberOfQuestions}} </b></h3>
+          <h3><b>Maximum Marks: {{quizzes.maxMarks}} </b></h3>
+          <p>{{quizzes.description}}</p>
+          </div>
+
+          <mat-card-actions  class="btn">
+            <button (click)="startQuiz()" mat-raised-button color="primary">Start Test</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

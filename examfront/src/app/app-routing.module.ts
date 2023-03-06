@@ -1,3 +1,6 @@
+import { ViewQuizComponent } from './pages/user/view-quiz/view-quiz.component';
+import { UserHomeComponent } from './pages/user/user-home/user-home.component';
+import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
@@ -20,6 +23,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import {ViewCategoriesComponent} from "./pages/admin/view-categories/view-categories.component";
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+
 
 const routes: Routes = [
   {
@@ -92,15 +96,28 @@ const routes: Routes = [
     canActivate:[NormalGuard],
     children:[
       {
+        path:'user-home',
+        component:UserHomeComponent,
+      },
+      {
         path:':catId',
         component:LoadQuizComponent,
       },
       {
-        path:'instructions/:qid',
+        path:'view/:qid',
+        component:ViewQuizComponent,
+      },
+      {
+        path:'instructions/:cid/:qid',
         component:InstructionsComponent,
-      }
+      },
     ]
   },
+  {
+    path:'start/:cid/:qid',
+    canActivate:[NormalGuard],
+    component:StartQuizComponent,
+  }
 
 ];
 

@@ -43,7 +43,9 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { UserHomeComponent } from './pages/user/user-home/user-home.component'
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
-import { StartComponent } from './pages/user/start/start.component';
+import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
+import { ViewQuizComponent } from './pages/user/view-quiz/view-quiz.component';
+import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +71,9 @@ import { StartComponent } from './pages/user/start/start.component';
     LoadQuizComponent,
     UserHomeComponent,
     InstructionsComponent,
-    StartComponent,
+    StartQuizComponent,
+    ViewQuizComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -91,6 +95,7 @@ import { StartComponent } from './pages/user/start/start.component';
     MatDividerModule,
     CKEditorModule,
     MatPaginatorModule,
+    MatRadioModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
