@@ -7,12 +7,35 @@
           <mat-divider></mat-divider>
           <div class="ml17 mt10">
           <h3><b>Title: {{quizzes.title}}</b></h3>
+          <p>{{quizzes.description}}</p>
           <h4>Category: {{quizzes.category.title}}</h4>
           <h4>Category Id: {{quizzes.category.cid}}</h4>
           <h3><b>Number of Questions: {{quizzes.numberOfQuestions}} </b></h3>
           <h3><b>Maximum Marks: {{quizzes.maxMarks}} </b></h3>
-          <p>{{quizzes.description}}</p>
+
+          <!-- negative marking details -->
+           <div *ngIf="quizzes.markingScheme==false">
+               <h3><b>Marking Scheme : Negative Marking</b></h3>
+              <h4>Details:</h4>
+              <ul>
+                <li><b>{{quizzes.maxMarks/quizzes.numberOfQuestions}}</b> marks are awarded for every correct answer</li>
+                <li><b>{{quizzes.maxMarks/quizzes.numberOfQuestions}}</b> marks are deducted for every wrong answer</li>
+                <li><b>{{roundOff()}}</b> marks are deducted as penalty from the total score of the candidate for every wrong answer</li>
+              </ul>
+           </div>
+
+           <!-- positve marking details -->
+           <div *ngIf="quizzes.markingScheme==true">
+               <h3><b>Marking Scheme : Positive Marking</b></h3>
+              <h4>Details:</h4>
+              <ul>
+                <li><b>{{quizzes.maxMarks/quizzes.numberOfQuestions}}</b> marks are awarded for every correct answer</li>
+                <li><b>{{quizzes.maxMarks/quizzes.numberOfQuestions}}</b> marks are deducted from the total score of the candidate for every wrong answer</li>
+              </ul>
+           </div>
+           <h3><b>Time Alloted: {{quizzes.timeCons*quizzes.numberOfQuestions/60}} minutes </b></h3>
           </div>
+          <mat-divider></mat-divider>
 
           <mat-card-actions  class="btn">
             <button (click)="startQuiz()" mat-raised-button color="primary">Start Test</button>
@@ -22,3 +45,6 @@
     </div>
   </div>
 </div>
+
+
+

@@ -13,6 +13,7 @@ export class InstructionsComponent implements OnInit {
  qid:any;
  quiz:any;
  cid:any;
+ neg:any;
 
   constructor (private _route:ActivatedRoute,private _quiz:QuizService, private _snack:MatSnackBar,private _router:Router) {}
 
@@ -45,4 +46,10 @@ Swal.fire({
 })
   }
 
+  roundOff()
+  {
+   let a= this.quiz.maxMarks/this.quiz.numberOfQuestions/3 ;
+    this.neg=a.toFixed(2);
+   return this.neg;
+  }
 }

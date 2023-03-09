@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2 mt70">
-         <mat-card>
+         <mat-card >
           <h1 class="mt10 text-center">Examinee Details</h1>
           <mat-divider></mat-divider>
          <mat-card-content>
@@ -18,12 +18,14 @@
        <ng-container  *ngIf="questions">
         <h1>Test: <b>{{questions[0].quiz.title}}</b></h1>
 
-        <mat-card *ngFor="let q of questions; let i = index" class="mt10 ml10">
-           <mat-card-content>
+        <mat-card *ngFor="let q of questions; let i = index" class="mt10 ml10" [id]="i">
+
+           <mat-card-content >
           <p>Q {{i+1}}:</p>
           <span [innerHTML]="q.content"></span>
           </mat-card-content>
            <mat-divider></mat-divider>
+
            <br>
 
            <!-- options -->
@@ -61,8 +63,8 @@
       </div>
 
       <!-- right-side -->
-      <div class="col-md-3">
-        <mat-card class="mt70">
+      <div class="col-md-3 ">
+        <mat-card class="mt70 pos">
          <h2 class="text-center mb10 mt10">Progress Dial</h2>
           <mat-divider></mat-divider>
           <mat-card-content>
@@ -70,14 +72,19 @@
             <mat-divider></mat-divider>
             <h1 class="text-center mt10"><b> {{getFormattedTime()}} </b></h1>
             <mat-divider></mat-divider>
+
             <div class="row" *ngIf="questions">
-             <div class="col-md-4" *ngFor="let q of questions; let i=index">
-                  <button class="mt10 btn" mat-flat-button color="primary">{{i+1}}</button>
+             <div class="col-md-4" *ngFor="let q of questions; let i=index" [id]="i">
+                <button (click)="scroll(i)"  class="mt10 btn" mat-flat-button color="primary">{{i+1}}</button>
              </div>
             </div>
+
             <mat-divider class="mt10"></mat-divider>
-            <div class=" text-center container mt10 mb10">
-              <button (click)="submitQuiz()" mat-raised-button color="primary">Submit</button>
+            <div class=" text-center container mt10 mb10" *ngIf="questions[0].quiz.markingScheme==true">
+              <button (click)="submitQuizPos()" mat-raised-button color="primary">Submit</button>
+            </div>
+            <div class=" text-center container mt10 mb10" *ngIf="questions[0].quiz.markingScheme==false">
+              <button (click)="submitNeg()" mat-raised-button color="primary">Submit</button>
             </div>
           </mat-card-content>
         </mat-card>
@@ -100,8 +107,9 @@
         <mat-card-content class="mt10">
           <h1>Marks Obtained: {{marksGot}}</h1>
           <h2>Attempted: {{attempted}} Questions</h2>
-          <h2>Correct Answers: {{correctAnswers}} Questions</h2>
           <h2>Unattempted: {{unattempted}} Questions</h2>
+          <h2>Correct Answers: {{correctAnswers}}</h2>
+          <h2>Incorrect Answers: {{incorrectAnswers}}</h2>
         </mat-card-content>
       </mat-card>
 
@@ -113,7 +121,6 @@
     </div>
   </div>
 </div>
-
 
 
 

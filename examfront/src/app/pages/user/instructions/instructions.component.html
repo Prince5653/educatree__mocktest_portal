@@ -28,13 +28,44 @@
           <h1>Attempting Quiz</h1>
           <ul>
             <li>Click <b>Start Test</b> button to start the test.</li>
+            <li>Once you start test , you cant <b>refresh, back</b> the page.</li>
+            <li><b>Right Click</b> will be restricted during the test.</li>
+            <li>If you open a <b>New Tab</b>, or by any means you leave the current tab, test will be automatically submitted.</li>
             <li>The time will start the moment you click the <b>Start Test</b> button.</li>
+            <li>Test will get automatically submitted on completion of time.</li>
             <li>You cannot resume this quiz , if interrupted due to any reason.</li>
             <li>Scroll Down to move to next question.</li>
-            <li>Click on <b>Submit</b> button on completion of the test.</li>
-            <li>Test will get automatically submitted on completion of time.</li>
+            <li>Click on <b>Clear Response</b> to clear your answer.</li>
+            <li>Click on <b>Mark for Review</b> button to mark it for reviewing it later.</li>
+            <li>The marked question will be treated as unattempted , if left empty.</li>
             <li>Report of the test is automatically generated in the form of PDF copy.</li>
           </ul>
+          <mat-divider></mat-divider>
+
+          <h1>Marking</h1>
+         <div *ngIf="quiz.markingScheme==false">
+
+          <h3><b>Marking Scheme : Negative Marking</b></h3>
+          <h4>Details:</h4>
+          <ul>
+            <li><b>{{quiz.maxMarks/quiz.numberOfQuestions}}</b> marks are awarded for every correct answer</li>
+            <li><b>{{quiz.maxMarks/quiz.numberOfQuestions}}</b> marks are deducted for every wrong answer</li>
+            <li><b>{{roundOff()}}</b> marks are deducted as penalty from the total score of the candidate for every wrong answer</li>
+          </ul>
+         </div>
+
+         <div *ngIf="quiz.markingScheme==true">
+          <h3><b>Marking Scheme : Positive Marking</b></h3>
+         <h4>Details:</h4>
+         <ul>
+           <li><b>{{quiz.maxMarks/quiz.numberOfQuestions}}</b> marks are awarded for every correct answer</li>
+           <li><b>{{quiz.maxMarks/quiz.numberOfQuestions}}</b> marks are deducted from the total score of the candidate for every wrong answer</li>
+         </ul>
+         <mat-divider></mat-divider>
+
+         <h3><b>Time Alloted: {{quiz.timeCons*quiz.numberOfQuestions/60}} minutes </b></h3>
+         <mat-divider></mat-divider>
+      </div>
           </mat-card-content>
           <mat-card-actions  class="btn">
             <button (click)="startQuiz()" mat-raised-button color="primary">Start Test</button>

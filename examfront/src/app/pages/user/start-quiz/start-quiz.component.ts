@@ -20,10 +20,14 @@ export class StartQuizComponent implements OnInit {
   state:any;
   cid:any;
   timer:any;
+  neg:any;
   user:any=null;
 
-  marksGot=0;
+  marksGot:any;
   correctAnswers=0;
+  incorrectAnswers=0;
+  poMarks=0;
+  negMarks=0;
   attempted=0;
   marked=0;
   unattempted=0;
@@ -81,8 +85,8 @@ export class StartQuizComponent implements OnInit {
     });
    }
 
-   //submit-test
-   submitQuiz(){
+   //submit-test-positive-Marking
+   submitQuizPos(){
     Swal.fire({
       title: 'Are you sure, you want to submit the test ?',
       icon:'question',
@@ -90,28 +94,87 @@ export class StartQuizComponent implements OnInit {
       confirmButtonText: 'Submit',
     }).then((e:any)=>{
       if(e.isConfirmed)
-      { //calculation
+      { //calculation-Positive-Marking
         this.isSubmit =true;
         this.questions.forEach((q:any)=>{
+
            if(q.givenAnswer==q.answer)
            {
             this.correctAnswers++;
             let marksSingle=this.questions[0].quiz.maxMarks/this.questions[0].quiz.numberOfQuestions;
-            this.marksGot += marksSingle;
+            this.marksGot= marksSingle*this.correctAnswers;
+           }
 
+           if(q.givenAnswer!=q.answer && q.givenAnswer.trim()!='')
+           {
+             this.incorrectAnswers++;
            }
 
            if(q.givenAnswer.trim()!='')
            {
             this.attempted++;
-            this.unattempted= this.questions.length-this.attempted;
+           }
+
+           if(q.givenAnswer=='')
+           {
+             this.unattempted++;
            }
           });
       }
     })
    }
 
+   //submit-quiz-negative-marking-evaluation
+   submitQuizNeg(){
+        this.questions.forEach((q:any)=>{
+            // correct
+           if(q.givenAnswer==q.answer)
+           {
+            this.correctAnswers++;
+            let marksSingle=this.questions[0].quiz.maxMarks/this.questions[0].quiz.numberOfQuestions;
+            this.poMarks = marksSingle*this.correctAnswers;
+          }
+              // incorrect
+          if(q.givenAnswer!=q.answer && q.givenAnswer.trim()!='' )
+          {
+            this.roundOff();
+            this.incorrectAnswers++;
+            this.negMarks = this.incorrectAnswers*this.neg;
+          }
+              // attempted
+          if(q.givenAnswer.trim()!='')
+          {
+            this.attempted++;
+          }
+               // unattempted
+          if(q.givenAnswer=='')
+          {
+            this.unattempted++;
+          }
+          });
 
+          return this.poMarks, this.negMarks;
+      }
+
+    //  submission ofnegative marking test
+   submitNeg()
+   {
+    Swal.fire({
+      title: 'Are you sure, you want to submit the test ?',
+      icon:'question',
+      showCancelButton: true,
+      confirmButtonText: 'Submit',
+    }).then((e:any)=>{
+      if(e.isConfirmed)
+      { //calculation-Negative-Marking
+        this.isSubmit =true;
+        this.submitQuizNeg();
+        let a =this.poMarks-this.negMarks;
+        this.marksGot=a.toFixed(2);
+      }});
+      }
+
+    // timesup submission
    timesUp()
    {
     this.isSubmit =true;
@@ -131,12 +194,12 @@ export class StartQuizComponent implements OnInit {
        }
    });
   }
-
+    // clear-response
    reset() {
     this.questions.givenAnswer ='';
     }
 
-
+     // timer
     startTimer()
     {
       let t = window.setInterval(()=>{
@@ -151,6 +214,7 @@ export class StartQuizComponent implements OnInit {
       },1000);
     }
 
+    // formatted time
     getFormattedTime()
     {
     let mm = Math.floor(this.timer / 60);
@@ -158,6 +222,18 @@ export class StartQuizComponent implements OnInit {
     return `${mm} min : ${ss} sec`;
     }
 
+    //  scrolling func
+    scroll(i:any)
+    {
+     document.getElementById(i)?.scrollIntoView({behavior:'smooth'});
+    }
 
+    // round-off upto 2-digits
+    roundOff()
+    {
+     let a= this.questions[0].quiz.maxMarks/this.questions[0].quiz.numberOfQuestions/3 ;
+     this.neg=a.toFixed(2);
+     return this.neg;
+    }
 
 }

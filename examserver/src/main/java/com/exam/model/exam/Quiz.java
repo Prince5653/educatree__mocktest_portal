@@ -24,6 +24,26 @@ public class Quiz {
 
     private  boolean active = false;
 
+    private boolean markingScheme = true;
+
+    private String timeCons;
+
+    public boolean isMarkingScheme() {
+        return markingScheme;
+    }
+
+    public void setMarkingScheme(boolean markingScheme) {
+        this.markingScheme = markingScheme;
+    }
+
+    public String getTimeCons() {
+        return timeCons;
+    }
+
+    public void setTimeCons(String timeCons) {
+        this.timeCons = timeCons;
+    }
+
     @ManyToOne(fetch = FetchType.EAGER)
     private Category category;
 

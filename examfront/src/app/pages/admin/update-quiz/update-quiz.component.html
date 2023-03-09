@@ -32,13 +32,9 @@
             </mat-form-field>
           </div>
         </div>
-         <!-- active -->
-         <mat-slide-toggle [(ngModel)]="quiz.active" name="active"  class="mt10 mb20">
-          Publish
-         </mat-slide-toggle>
 
          <!-- category -->
-         <mat-form-field appearance="fill" class="ml40">
+         <mat-form-field appearance="fill" class="w50">
           <mat-label>Category</mat-label>
           <mat-select  name="category" [(ngModel)]="quiz.category.cid" >
             <mat-option *ngFor="let c of categories" [value]="c.cid">
@@ -46,7 +42,33 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <button mat-raised-button color="primary" class="ml115 text-center">Update</button>
+
+        <mat-slide-toggle [(ngModel)]="quiz.markingScheme" name="markingScheme"  class=" ml35 mr20">
+          Positive Marking
+     </mat-slide-toggle>
+
+        <mat-slide-toggle [(ngModel)]="quiz.active" name="active"  class="mt10 mb20 ml50">
+          Publish
+        </mat-slide-toggle>
+
+        <div class="row">
+          <div class="col-md-6">
+
+            <!-- timeCons -->
+            <mat-form-field class="w100" appearance="fill">
+              <mat-label>Time Alloted</mat-label>
+              <input [(ngModel)]="quiz.timeCons"  type="number" name="timeCons" placeholder="for each question (in seconds)" matInput />
+            </mat-form-field>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <button mat-raised-button color="primary" class="ml115 text-center mt10">Update</button>
+                </div>
+
+              </div>
+
 
       </form>
 
@@ -55,5 +77,6 @@
   </div>
   </div>
 </mat-card>
+
 
 

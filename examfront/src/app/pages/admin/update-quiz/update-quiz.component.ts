@@ -23,6 +23,8 @@ export class UpdateQuizComponent  implements OnInit{
     maxMarks:'',
     numberOfQuestions:'',
     active: true,
+    markingScheme: true,
+    timeCons:'',
     category:{
       cid:'',
     }

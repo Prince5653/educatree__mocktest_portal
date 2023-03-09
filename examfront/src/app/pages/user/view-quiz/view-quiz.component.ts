@@ -14,6 +14,7 @@ export class ViewQuizComponent implements OnInit{
   catId:any;
   qId:any;
   quizzes:any;
+  neg:any;
   constructor (private _quiz:QuizService, private _route:ActivatedRoute,private _router:Router) {}
 
   ngOnInit(): void {
@@ -26,12 +27,13 @@ export class ViewQuizComponent implements OnInit{
    (error)=>{
    console.log(error);
     })
-    })
+    });
+
    }
 
    startQuiz()
    {
- Swal.fire({
+   Swal.fire({
    title: 'Do you want to start the test ?',
    icon:'question',
    showCancelButton: true,
@@ -43,5 +45,11 @@ export class ViewQuizComponent implements OnInit{
    }
  })
    }
-  }
 
+   roundOff()
+   {
+    let a= this.quizzes.maxMarks/this.quizzes.numberOfQuestions/3 ;
+     this.neg=a.toFixed(2);
+    return this.neg;
+   }
+  }
