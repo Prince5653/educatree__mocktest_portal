@@ -22,6 +22,9 @@ export class StartQuizComponent implements OnInit {
   timer:any;
   neg:any;
   user:any=null;
+  per:any;
+  accu:any;
+  pass:any;
 
   marksGot:any;
   correctAnswers=0;
@@ -51,6 +54,9 @@ export class StartQuizComponent implements OnInit {
    loadQuestions(){
     this._question.getQuestionsOfQuizForTest(this.qid).subscribe((data:any)=>{
       this.questions=data;
+      this.pass = this.questions[0].quiz.passMarks;
+
+
 
       this.timer=this.questions.length*2*60;
 
@@ -235,5 +241,21 @@ export class StartQuizComponent implements OnInit {
      this.neg=a.toFixed(2);
      return this.neg;
     }
+       //percentage
+    percentage()
+    {
+      let a=this.marksGot/this.questions[0].quiz.maxMarks*100;
+      this.per=a.toFixed(2);
+      return this.per;
+    }
+       //accuracy
+    accuracy()
+    {
+      let a=this.correctAnswers/this.questions[0].quiz.numberOfQuestions*100;
+      this.accu=a.toFixed(2);
+      return this.accu;
+    }
+
+
 
 }

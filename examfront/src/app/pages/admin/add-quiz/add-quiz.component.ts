@@ -26,6 +26,9 @@ export class AddQuizComponent  implements OnInit{
       active: true,
       markingScheme: true,
       timeCons:'',
+      passMarks:'',
+      attempts:'',
+      answers:false,
       category:{
         cid:'',
       }
@@ -65,6 +68,9 @@ export class AddQuizComponent  implements OnInit{
               active: true,
               markingScheme: true,
               timeCons:'',
+              passMarks:'',
+              attempts:'',
+              answers:false,
               category:{
                 cid:'',
               },

@@ -106,6 +106,18 @@
             <mat-divider></mat-divider>
         <mat-card-content class="mt10">
           <h1>Marks Obtained: {{marksGot}}</h1>
+          <h1>Percentage: {{percentage()}}</h1>
+          <h1>Accuracy: {{accuracy()}}</h1>
+          <h1>
+            <div *ngIf="this.per>=this.pass">
+              Remarks: Passed
+            </div>
+
+            <div *ngIf="this.per<=this.pass">
+              Remarks: Failed
+            </div>
+          </h1>
+          <mat-divider></mat-divider>
           <h2>Attempted: {{attempted}} Questions</h2>
           <h2>Unattempted: {{unattempted}} Questions</h2>
           <h2>Correct Answers: {{correctAnswers}}</h2>

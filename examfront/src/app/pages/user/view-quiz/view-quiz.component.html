@@ -8,11 +8,17 @@
           <div class="ml17 mt10">
           <h3><b>Title: {{quizzes.title}}</b></h3>
           <p>{{quizzes.description}}</p>
+          <mat-divider></mat-divider>
           <h4>Category: {{quizzes.category.title}}</h4>
           <h4>Category Id: {{quizzes.category.cid}}</h4>
+          <p>Description: {{quizzes.category.description}}</p>
+          <mat-divider></mat-divider>
           <h3><b>Number of Questions: {{quizzes.numberOfQuestions}} </b></h3>
           <h3><b>Maximum Marks: {{quizzes.maxMarks}} </b></h3>
+          <h3><b>Minimum Passing Percentage: {{quizzes.passMarks}}</b></h3>
+          <h3 *ngIf="quizzes.attempts"><b>Maximum Attempts: {{quizzes.attempts}}</b></h3>
 
+          <mat-divider></mat-divider>
           <!-- negative marking details -->
            <div *ngIf="quizzes.markingScheme==false">
                <h3><b>Marking Scheme : Negative Marking</b></h3>

@@ -21,7 +21,8 @@
             <li>Do NOT take photos, screen shots, hear audio, or record videos of the examination and then share it with others during the online examination, a remote proctor would watch such unwanted activities. If found doing such activities, it will be treated as malpractice.</li>
             <li>Each question contains <b>{{quiz.maxMarks/quiz.numberOfQuestions}} Marks</b>.</li>
             <li>All questions are of MCQ types.</li>
-            <li>You canattempt this quiz any number of times.</li>
+            <li *ngIf="!quiz.attempts">You can attempt this test <b>any</b> number of times.</li>
+            <li *ngIf="quiz.attempts">You can attempt this test for <b>{{quiz.attempts}}</b> times.</li>
           </ul>
           <mat-divider></mat-divider>
 
@@ -61,11 +62,11 @@
            <li><b>{{quiz.maxMarks/quiz.numberOfQuestions}}</b> marks are awarded for every correct answer</li>
            <li><b>{{quiz.maxMarks/quiz.numberOfQuestions}}</b> marks are deducted from the total score of the candidate for every wrong answer</li>
          </ul>
-         <mat-divider></mat-divider>
-
-         <h3><b>Time Alloted: {{quiz.timeCons*quiz.numberOfQuestions/60}} minutes </b></h3>
-         <mat-divider></mat-divider>
-      </div>
+        </div>
+        <mat-divider></mat-divider>
+        <h3><b>Minimum Passing Percentage: {{quiz.passMarks}}</b></h3>
+        <h3><b>Time Alloted: {{quiz.timeCons*quiz.numberOfQuestions/60}} minutes </b></h3>
+        <mat-divider></mat-divider>
           </mat-card-content>
           <mat-card-actions  class="btn">
             <button (click)="startQuiz()" mat-raised-button color="primary">Start Test</button>
@@ -75,3 +76,4 @@
     </div>
   </div>
 </div>
+

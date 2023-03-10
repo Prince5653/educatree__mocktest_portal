@@ -24,9 +24,43 @@ public class Quiz {
 
     private  boolean active = false;
 
-    private boolean markingScheme = true;
+    private  boolean markingScheme = true;
 
     private String timeCons;
+
+    private String passMarks;
+
+    private String attempts;
+
+    private boolean answers = false;
+
+
+
+    
+
+    public String getPassMarks() {
+        return passMarks;
+    }
+
+    public void setPassMarks(String passMarks) {
+        this.passMarks = passMarks;
+    }
+
+    public String getAttempts() {
+        return attempts;
+    }
+
+    public void setAttempts(String attempts) {
+        this.attempts = attempts;
+    }
+
+    public boolean isAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(boolean answers) {
+        this.answers = answers;
+    }
 
     public boolean isMarkingScheme() {
         return markingScheme;

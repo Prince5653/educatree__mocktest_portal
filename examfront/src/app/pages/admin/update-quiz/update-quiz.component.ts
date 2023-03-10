@@ -25,6 +25,9 @@ export class UpdateQuizComponent  implements OnInit{
     active: true,
     markingScheme: true,
     timeCons:'',
+    passMarks:'',
+    attempts:'',
+    answers:false,
     category:{
       cid:'',
     }
