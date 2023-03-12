@@ -31,6 +31,9 @@ public class UserController {
          //Encoding the password
         user.setPassword(this.bCryptPasswordEncoder.encode(user.getPassword()));
 
+        //Encoding the confirmpassword
+        user.setConfirmPassword(this.bCryptPasswordEncoder.encode((user.getConfirmPassword())));
+
 
         Set<UserRole> roles=new HashSet<>();
 

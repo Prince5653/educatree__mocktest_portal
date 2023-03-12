@@ -18,6 +18,16 @@ public class User implements UserDetails {
     private Long id;
     private String username;
     private String password;
+    private String confirmPassword;
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
     private String firstName;
     private String lastName;
     private String email;

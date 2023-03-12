@@ -17,6 +17,7 @@ export class SignupComponent implements OnInit  {
   public user={
     username:'',
     password:'',
+    confirmPassword:'',
     firstName:'',
     lastName:'',
     email:'',
@@ -27,6 +28,7 @@ export class SignupComponent implements OnInit  {
 
   formSubmit()
   {
+
 
     if(this.user.username=='' || this.user.username==null)
     {
@@ -40,6 +42,19 @@ export class SignupComponent implements OnInit  {
       this.snack.open("Password is required !!","",{duration:2500});
       return;
     }
+    if(this.user.confirmPassword=='' || this.user.confirmPassword==null)
+    {
+      // alert('confirm-password is required !!')
+      this.snack.open("Confirm your Password !!","",{duration:2500});
+      return;
+    }
+    if(this.user.password!=this.user.confirmPassword )
+    {
+      // alert('password match !!')
+      this.snack.open("Password didn't matched, Try Again !","",{duration:2500});
+      return;
+    }
+
 
     if(this.user.firstName=='' || this.user.firstName==null)
     {
@@ -76,8 +91,6 @@ export class SignupComponent implements OnInit  {
       }
     );
   }
-
-
 
 
 }
