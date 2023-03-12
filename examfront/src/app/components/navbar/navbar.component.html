@@ -1,20 +1,23 @@
 <p>
   <mat-toolbar color="primary">
-   <a routerLink="/" mat-icon-button class="book" aria-label="book-icon">
+   <a routerLink="/"  mat-flat-button color="primary" class="book" aria-label="book-icon">
     <mat-icon>menu_book</mat-icon>
+    <span>Educatree</span>
   </a>
-  <span>Educatree</span>
   <span class="example-spacer"></span>
-
+   <a *ngIf="!isLoggedIn" mat-flat-button color="primary" routerLink="/about">About</a>
+   <a *ngIf="!isLoggedIn" mat-flat-button color="primary" routerLink="/contact-us">Contact Us</a>
   <a *ngIf="!isLoggedIn" routerLink="/login"  mat-flat-button class="nav-login" color="primary" aria-label="nav-login-button">Login</a>
- <a *ngIf="!isLoggedIn" routerLink="/signup" mat-flat-button class="nav-register" color="primary" aria-label="nav-register-button">Signup</a>
 
- <a  *ngIf="!isLoggedIn" href="https://github.com/rahul87911" target="_blank" color="primary" mat-fab extended class="github ml10" aria-label="mygithub">
-  <mat-icon svgIcon="github"></mat-icon>
-  Github
- </a>
+
+ <div  *ngIf="isLoggedIn && user" >
  <button  *ngIf="isLoggedIn && user"  mat-button routerLink="/admin/profile"  aria-label="nav-username"> {{user.username}} </button>
 
- <a (click)="logout()" *ngIf="isLoggedIn"  mat-flat-button class="nav-logout" color="primary" aria-label="nav-register-logout"> Logout </a>
+ <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+ <mat-menu #menu="matMenu">
+   <button (click)="deleteUser(user.id)" *ngIf="isLoggedIn" mat-menu-item><mat-icon>delete</mat-icon>Delete</button>
+   <button  (click)="logout()" *ngIf="isLoggedIn" mat-menu-item><mat-icon>logout</mat-icon>Logout</button>
+ </mat-menu>
+ </div>
 </mat-toolbar>
 </p>

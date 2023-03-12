@@ -47,6 +47,12 @@ import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component
 import { ViewQuizComponent } from './pages/user/view-quiz/view-quiz.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { UpdateUserComponent } from './pages/admin/update-user/update-user.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { ViewAnswersComponent } from './pages/user/view-answers/view-answers.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +80,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     InstructionsComponent,
     StartQuizComponent,
     ViewQuizComponent,
+    UpdateUserComponent,
+    ViewAnswersComponent,
+    ContactUsComponent,
+    AboutComponent,
 
   ],
   imports: [
@@ -98,6 +108,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatPaginatorModule,
     MatRadioModule,
     MatProgressSpinnerModule,
+    MatMenuModule,
+    ReactiveFormsModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

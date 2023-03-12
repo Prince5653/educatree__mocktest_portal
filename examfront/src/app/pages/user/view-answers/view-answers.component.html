@@ -1,0 +1,28 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 ">
+        <mat-card>
+          <mat-card-header><h1>Answers: {{questions[0].quiz.title}}</h1></mat-card-header>
+          <mat-divider></mat-divider>
+        </mat-card>
+
+        <mat-card *ngFor="let q of questions; let i = index" class="mt10 ml10" [id]="i">
+
+          <mat-card-content >
+
+           <h4>Q {{i+1}}:  <span [innerHTML]="q.content"></span></h4>
+            <span><b> Answer: {{q.answer}}</b></span>
+            </mat-card-content>
+             <mat-divider></mat-divider>
+            </mat-card>
+
+            <div class="text-center mt10 mb10 ml10">
+             <button  routerLink="/user-dashboard/user-home" mat-raised-button color="primary">Home</button>
+             <button  [routerLink]="'/user-dashboard/'+cid"  class="ml10" mat-raised-button color="primary">Tests</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+

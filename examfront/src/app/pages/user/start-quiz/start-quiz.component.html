@@ -102,37 +102,37 @@
   <div class="row text-center">
     <div class="col-md-6  offset-md-3">
       <mat-card>
-            <h1 class="text-center mt10"><b>Test Result</b></h1>
+            <h1 class="text-center mt10"><b>Test Result:</b></h1>
             <mat-divider></mat-divider>
         <mat-card-content class="mt10">
-          <h1>Marks Obtained: {{marksGot}}</h1>
+          <h1>Marks Obtained: <span *ngIf="questions[0].quiz.markingScheme==true">{{markspos}}</span>  <span *ngIf="questions[0].quiz.markingScheme==false">{{marksGot}}</span></h1>
           <h1>Percentage: {{percentage()}}</h1>
           <h1>Accuracy: {{accuracy()}}</h1>
-          <h1>
-            <div *ngIf="this.per>=this.pass">
-              Remarks: Passed
-            </div>
 
-            <div *ngIf="this.per<=this.pass">
-              Remarks: Failed
-            </div>
-          </h1>
           <mat-divider></mat-divider>
           <h2>Attempted: {{attempted}} Questions</h2>
           <h2>Unattempted: {{unattempted}} Questions</h2>
           <h2>Correct Answers: {{correctAnswers}}</h2>
           <h2>Incorrect Answers: {{incorrectAnswers}}</h2>
+          <mat-divider></mat-divider>
+          <h2>
+            <div *ngIf="this.per==this.pass || this.per>this.pass || this.per==100">Remarks: Passed</div>
+            <div *ngIf="this.per<this.pass && this.per!=100">Remarks: Failed</div>
+          </h2>
         </mat-card-content>
       </mat-card>
 
       <div class="mt10 ml10 mb10">
         <button  routerLink="/user-dashboard/user-home" mat-raised-button color="primary">Home</button>
         <button  [routerLink]="'/user-dashboard/'+cid"  class="ml10" mat-raised-button color="primary">Tests</button>
+        <button  [routerLink]="'/answers/'+cid+'/'+qid"  class="ml10" mat-raised-button color="primary">Answers</button>
        </div>
 
     </div>
   </div>
 </div>
+
+
 
 
 

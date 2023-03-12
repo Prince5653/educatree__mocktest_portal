@@ -1,3 +1,7 @@
+import { AboutComponent } from './pages/about/about.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { ViewAnswersComponent } from './pages/user/view-answers/view-answers.component';
+import { UpdateUserComponent } from './pages/admin/update-user/update-user.component';
 import { ViewQuizComponent } from './pages/user/view-quiz/view-quiz.component';
 import { UserHomeComponent } from './pages/user/user-home/user-home.component';
 import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
@@ -41,6 +45,16 @@ const routes: Routes = [
     component: LoginComponent,
     pathMatch:'full',
   },
+  {
+    path:'contact-us',
+    component:ContactUsComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'about',
+    component:AboutComponent,
+    pathMatch:'full'
+  },
 
   {
     path:'admin',
@@ -50,6 +64,10 @@ const routes: Routes = [
       {
         path:'',
         component:WelcomeComponent,
+      },
+      {
+        path:'update-user/:id',
+        component:UpdateUserComponent,
       },
       {
         path:'profile',
@@ -117,6 +135,11 @@ const routes: Routes = [
     path:'start/:cid/:qid',
     canActivate:[NormalGuard],
     component:StartQuizComponent,
+  },
+  {
+    path:'answers/:cid/:qid',
+    canActivate:[NormalGuard],
+    component:ViewAnswersComponent,
   }
 
 ];

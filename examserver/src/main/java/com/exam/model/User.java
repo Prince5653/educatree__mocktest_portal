@@ -25,6 +25,9 @@ public class User implements UserDetails {
     private boolean enabled=true;
     private String profile;
 
+
+
+
     //user many roles
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "user")
     @JsonIgnore

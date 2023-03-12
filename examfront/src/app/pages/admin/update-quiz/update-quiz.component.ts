@@ -35,7 +35,7 @@ export class UpdateQuizComponent  implements OnInit{
 
   ngOnInit(): void {
        this.qId=this._route.snapshot.params['qid'];
-      this._quiz.getQuiz(this.qId).subscribe(
+       this._quiz.getQuiz(this.qId).subscribe(
         (data:any)=>{
           this.quiz=data;
           console.log(this.quiz);

@@ -38,6 +38,12 @@
                 <td>{{user.enabled?"ACTIVE":"INACTIVE"}}</td>
               </tr>
             </table>
+
+            <mat-divider></mat-divider>
+            <div class="text-center mt10 ">
+              <button [routerLink]="'/admin/update-user/'+user.id" mat-raised-button color="primary">Update</button>
+              <button (click)="deleteUser(user.id)" class="ml10" mat-raised-button color="primary">Delete</button>
+            </div>
           </div>
         </div>
       </div>

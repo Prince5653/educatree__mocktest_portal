@@ -1,0 +1,43 @@
+<mat-card>
+  <h1 class="ml20 mt10">Update User Details</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+
+        <form *ngIf="user" (ngSubmit)="updateUser()">
+
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Enter Username</mat-label>
+            <input [(ngModel)]="user.username" type="text" name="username" placeholder="Enter here" matInput />
+         </mat-form-field>
+
+         <mat-form-field class="w100" appearance="fill">
+          <mat-label>Enter Firstname</mat-label>
+          <input [(ngModel)]="user.firstName" type="text" name="firstName" placeholder="Enter here" matInput />
+          </mat-form-field>
+
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Enter Lastname</mat-label>
+            <input [(ngModel)]="user.lastName" type="text" name="lastName" placeholder="Enter here" matInput />
+          </mat-form-field>
+
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Enter Email-Id</mat-label>
+            <input [(ngModel)]="user.email" type="text" name="email" placeholder="Enter here" matInput />
+          </mat-form-field>
+
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Enter Conatct Number</mat-label>
+            <input [(ngModel)]="user.phone" type="text" name="phone" placeholder="Enter here" matInput />
+          </mat-form-field>
+
+          <div class="text-center mt10 mb10">
+            <button mat-raised-button color="primary">Update</button>
+          </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</mat-card>
+
+{{user |json}}

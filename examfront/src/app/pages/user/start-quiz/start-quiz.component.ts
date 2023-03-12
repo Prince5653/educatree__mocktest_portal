@@ -1,3 +1,5 @@
+import { UserService } from './../../../services/user.service';
+import { QuizService } from './../../../services/quiz.service';
 import { LoginService } from './../../../services/login.service';
 import { QuestionService } from './../../../services/question.service';
 import { ActivatedRoute } from '@angular/router';
@@ -5,6 +7,7 @@ import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { __values } from 'tslib';
+
 
 
 @Component({
@@ -25,8 +28,11 @@ export class StartQuizComponent implements OnInit {
   per:any;
   accu:any;
   pass:any;
+  attempt=0;
+  uid:any;
 
   marksGot:any;
+  markspos=0;
   correctAnswers=0;
   incorrectAnswers=0;
   poMarks=0;
@@ -35,7 +41,9 @@ export class StartQuizComponent implements OnInit {
   marked=0;
   unattempted=0;
 
-   constructor(private _location:LocationStrategy,private _route:ActivatedRoute, private _question:QuestionService,private _user:LoginService) {}
+   constructor(private _location:LocationStrategy,private _route:ActivatedRoute, private _question:QuestionService,private _user:LoginService,private _quiz:QuizService,private _uid:UserService) {}
+
+
 
    ngOnInit(): void {
      this.preventBack();
@@ -47,8 +55,16 @@ export class StartQuizComponent implements OnInit {
      this.loadQuestions();
 
      this.user = this._user.getUser();
+     this.uid= this.user.id;
 
    }
+
+
+
+
+
+
+
 
    //loading-questions
    loadQuestions(){
@@ -108,7 +124,7 @@ export class StartQuizComponent implements OnInit {
            {
             this.correctAnswers++;
             let marksSingle=this.questions[0].quiz.maxMarks/this.questions[0].quiz.numberOfQuestions;
-            this.marksGot= marksSingle*this.correctAnswers;
+            this.markspos= marksSingle*this.correctAnswers;
            }
 
            if(q.givenAnswer!=q.answer && q.givenAnswer.trim()!='')
@@ -174,9 +190,24 @@ export class StartQuizComponent implements OnInit {
       if(e.isConfirmed)
       { //calculation-Negative-Marking
         this.isSubmit =true;
-        this.submitQuizNeg();
-        let a =this.poMarks-this.negMarks;
-        this.marksGot=a.toFixed(2);
+        this.questions[0].quiz.attemptsDone++;
+
+
+
+        if(this.questions[0].quiz.attempts)
+        {
+          this.submitQuizNeg();
+          let a =this.poMarks-this.negMarks;
+          this.marksGot=a.toFixed(2);
+        }
+
+        else if(!this.questions[0].quiz.attempts)
+        {
+          this.submitQuizNeg();
+          let a =this.poMarks-this.negMarks;
+          this.marksGot=a.toFixed(2);
+        }
+
       }});
       }
 
@@ -244,9 +275,17 @@ export class StartQuizComponent implements OnInit {
        //percentage
     percentage()
     {
-      let a=this.marksGot/this.questions[0].quiz.maxMarks*100;
-      this.per=a.toFixed(2);
-      return this.per;
+      if(this.questions[0].quiz.markingScheme==true)
+      {
+        let a=this.markspos/this.questions[0].quiz.maxMarks*100;
+        this.per=a.toFixed(2);
+        return this.per;
+      } if(this.questions[0].quiz.markingScheme==false)
+      {
+        let a=this.marksGot/this.questions[0].quiz.maxMarks*100;
+        this.per=a.toFixed(2);
+        return this.per;
+      }
     }
        //accuracy
     accuracy()

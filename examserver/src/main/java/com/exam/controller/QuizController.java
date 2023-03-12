@@ -74,4 +74,5 @@ public class QuizController {
         category.setCid(cid);
         return this.quizService.getActiveQuizzesOfCategory(category);
     }
+
 }

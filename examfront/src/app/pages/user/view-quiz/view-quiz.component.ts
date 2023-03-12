@@ -41,7 +41,7 @@ export class ViewQuizComponent implements OnInit{
  }).then((result) => {
    /* Read more about isConfirmed, isDenied below */
    if (result.isConfirmed) {
-    this._router.navigate(['/start/'+this.qId])
+    this._router.navigate(['/start/'+this.catId+'/'+this.qId])
    }
  })
    }

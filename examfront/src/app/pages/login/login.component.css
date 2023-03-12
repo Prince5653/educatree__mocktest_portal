@@ -4,3 +4,8 @@
 html ,body{
   font-family: 'Rubik', sans-serif;
 }
+
+.btn{
+  width: 100%;
+  padding: 2px;
+}

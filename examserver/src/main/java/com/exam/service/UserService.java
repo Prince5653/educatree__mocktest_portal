@@ -2,6 +2,7 @@ package com.exam.service;
 
 import com.exam.model.User;
 import com.exam.model.UserRole;
+import com.exam.model.exam.Quiz;
 
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -16,7 +17,10 @@ public interface UserService {
 
     //delete user by id
     public void deleteUser(Long userId);
+
     //update user by username
+    public User updateUser (User user);
+
 
 
 

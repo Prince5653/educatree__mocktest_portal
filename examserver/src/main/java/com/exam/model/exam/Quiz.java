@@ -32,11 +32,17 @@ public class Quiz {
 
     private String attempts;
 
+
+
+
+
+
+
     private boolean answers = false;
 
 
 
-    
+
 
     public String getPassMarks() {
         return passMarks;

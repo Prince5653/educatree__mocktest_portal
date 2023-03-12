@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit  {
+  hide = true;
   constructor(
     private userService:UserService,private snack:MatSnackBar
   ) {}
@@ -26,16 +27,38 @@ export class SignupComponent implements OnInit  {
 
   formSubmit()
   {
-    console.log(this.user);
+
     if(this.user.username=='' || this.user.username==null)
     {
       // alert('Username is required !!')
       this.snack.open("Username is required !!","",{duration:2500});
       return;
     }
-    //validate
+    if(this.user.password=='' || this.user.password==null)
+    {
+      // alert('password is required !!')
+      this.snack.open("Password is required !!","",{duration:2500});
+      return;
+    }
 
-
+    if(this.user.firstName=='' || this.user.firstName==null)
+    {
+      // alert('firstname is required !!')
+      this.snack.open("Firstname is required !!","",{duration:2500});
+      return;
+    }
+    if(this.user.email=='' || this.user.email==null)
+    {
+      // alert('email is required !!')
+      this.snack.open("Email is required !!","",{duration:2500});
+      return;
+    }
+    if(this.user.phone=='' || this.user.phone==null)
+    {
+      // alert('phone is required !!')
+      this.snack.open("Contact Number is required !!","",{duration:2500});
+      return;
+    }
 
     //add user:userservice
     this.userService.addUser(this.user).subscribe(
@@ -53,6 +76,8 @@ export class SignupComponent implements OnInit  {
       }
     );
   }
-  //this.user
+
+
+
 
 }

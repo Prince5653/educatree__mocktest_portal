@@ -15,6 +15,7 @@ export class InstructionsComponent implements OnInit {
  cid:any;
  neg:any;
 
+
   constructor (private _route:ActivatedRoute,private _quiz:QuizService, private _snack:MatSnackBar,private _router:Router) {}
 
   ngOnInit(): void {
@@ -52,4 +53,5 @@ Swal.fire({
     this.neg=a.toFixed(2);
    return this.neg;
   }
+
 }

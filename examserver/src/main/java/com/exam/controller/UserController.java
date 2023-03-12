@@ -61,9 +61,15 @@ public class UserController {
     }
 
     //update api
+     @PutMapping("/")
+     public ResponseEntity<User> update(@RequestBody User user)
+     {
+      return ResponseEntity.ok(this.userService.updateUser(user));
+     }
 
-    @ExceptionHandler(UserFoundException.class)
-    public ResponseEntity<?> exceptionHandler (UserFoundException ex) {return new ResponseEntity("User Already Exists", HttpStatus.FOUND);}
+
+     @ExceptionHandler(UserFoundException.class)
+     public ResponseEntity<?> exceptionHandler (UserFoundException ex) {return new ResponseEntity("User Already Exists", HttpStatus.FOUND);}
 }
 
 

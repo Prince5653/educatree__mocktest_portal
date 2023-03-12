@@ -19,24 +19,33 @@
              <!-- username -->
              <mat-form-field class="full-width" appearance="outline">
               <mat-label>Username</mat-label>
-              <input required
+              <input
               [(ngModel)]="user.username"
               name="username"
               matInput placeholder="Enter Here">
-              <mat-hint>*Username must be unique*</mat-hint>
             </mat-form-field>
             <!-- password -->
-             <mat-form-field class="full-width" appearance="outline">
+            <mat-form-field class="full-width" appearance="outline" id="pass">
               <mat-label>Password</mat-label>
-              <input required type="password"
-              [(ngModel)]="user.password"
-              name="password"
-              matInput placeholder="Enter Here">
+              <input  id="password" [(ngModel)]="user.password" name="password" matInput [type]="hide ? 'password' : 'text'" placeholder="Enter Here">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
             </mat-form-field>
+
+            <!-- confirm-password -->
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input  id="confrm-password" name="password" matInput [type]="hide ? 'password' : 'text'" placeholder="Enter Here">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+
             <!-- firstname -->
              <mat-form-field class="full-width" appearance="outline">
               <mat-label>First Name</mat-label>
-              <input required
+              <input
               [(ngModel)]="user.firstName"
               name="firstName"
               matInput placeholder="Enter Here">
@@ -44,7 +53,7 @@
             <!-- lastname -->
              <mat-form-field class="full-width" appearance="outline">
               <mat-label>Last Name</mat-label>
-              <input required
+              <input
               [(ngModel)]="user.lastName"
               name="lastName"
               matInput placeholder="Enter Here">
@@ -52,7 +61,7 @@
             <!-- email -->
              <mat-form-field class="full-width" appearance="outline">
               <mat-label>Email Address</mat-label>
-              <input required type="email"
+              <input  type="email"
               [(ngModel)]="user.email"
               name="email"
               matInput placeholder="Enter Here">
@@ -60,17 +69,22 @@
             <!-- phone -->
              <mat-form-field class="full-width" appearance="outline">
               <mat-label>Phone Number</mat-label>
-              <input required type="number" ng-maxlength="10"
+              <input  type="number" ng-maxlength="10"
               [(ngModel)]="user.phone"
               name="phone"
               matInput placeholder="Enter Here">
             </mat-form-field>
             <!-- buttons -->
             <div class="container text-center">
-              <button type="submit"  mat-raised-button color="primary">Register</button>
-              <button class="ml10" type="reset"  mat-raised-button color="primary">Reset</button>
+              <button type="submit" class="btn"  mat-raised-button color="primary">Register</button>
+              <button class="ml10"  class="btn mt10" type="reset"  mat-raised-button color="primary">Reset</button>
+            </div>
+
+            <div class="text-center mt20">
+              <h3>Already a member? <a routerLink="/login">Login</a></h3>
             </div>
         </form>
+
         </mat-card-content>
         </mat-card>
       </div>
