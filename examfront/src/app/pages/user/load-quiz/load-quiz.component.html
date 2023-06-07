@@ -2,6 +2,7 @@
   <div class="container-fluid">
     <h1 class="ml20 mt10">Available Tests</h1>
     <div class="row" *ngIf="quizzes">
+
       <div class="col-md-4" *ngFor="let q of quizzes">
         <mat-card class="card">
           <mat-card-header>
@@ -22,6 +23,7 @@
           </mat-card-actions>
         </mat-card>
       </div>
+
       <div class="col-md-12" *ngIf="quizzes.length==0">
         <mat-card>
           <mat-card-content>
@@ -30,6 +32,17 @@
         </mat-card>
       </div>
     </div>
+
+    <mat-paginator [length]="this.quizzes.length"
+              [pageSize]="9"
+              aria-label="paginator"
+              (page)="OnPageChange($event)">
+    </mat-paginator>
+
+
+
+
+
   </div>
 </div>
 

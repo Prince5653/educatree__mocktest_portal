@@ -1,17 +1,18 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { QuizService } from './../../../services/quiz.service';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import {PageEvent} from '@angular/material/paginator';
-
-
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import {MatPaginator, PageEvent} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-load-quiz',
   templateUrl: './load-quiz.component.html',
   styleUrls: ['./load-quiz.component.css']
 })
+
 export class LoadQuizComponent implements OnInit{
+
+
 
   catId:any;
   quizzes:any;
@@ -43,7 +44,18 @@ export class LoadQuizComponent implements OnInit{
 
        }
      });
+    }
 
+    OnPageChange(event:PageEvent){
+      console.log(event);
+      const startIndex = event.pageIndex*event.pageSize;
+      let endIndex = startIndex + event.pageSize;
+
+
+      if(endIndex > this.quizzes.length){
+        endIndex = this.quizzes.length;
+      }
+      this.quizzes.slice(startIndex, endIndex);
     }
 
   }

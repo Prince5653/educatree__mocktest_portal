@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="mt10" >
   <h1 class="ml20 mt10">Add Quiz</h1>
   <div class="container">
   <div class="row">
@@ -56,11 +56,11 @@
                  <input [(ngModel)]="quizData.passMarks"  type="number" name="passMarks" placeholder="Enter here" matInput />
                </mat-form-field>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 ">
                 <!-- attempts -->
-               <mat-form-field appearance="fill" class="w75 ml10">
+               <mat-form-field appearance="fill" class="w75">
                  <mat-label>Max Attempts</mat-label>
-                 <input [(ngModel)]="quizData.attempts"  type="number" name="attempts" placeholder="Enter here" matInput />
+                 <input [(ngModel)]="quizData.attempts"  type="number" name="attempts" placeholder="Enter here" class="ml10" matInput />
                </mat-form-field>
               </div>
            </div>

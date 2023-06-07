@@ -1,15 +1,541 @@
-<head><link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet"></head>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="bootstrap-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 offset-md-3 text-center mt20">
-        <h1>Welcome to EDUCATREE</h1>
-        <button mat-raised-button color="primary">Home</button>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+</head>
+
+
+
+
+<body>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>Better Education Will <br> Lead Us To The Better Future </h1>
+          <h2>We are a team of talented magicians making <br> studies fun for real</h2>
+          <span class="d-flex justify-content-center justify-content-lg-start">
+            <a routerLink="/enquiry" class="btn-get-started scrollto">Get Started</a>
+            <a href="https://www.youtube.com/watch?v=U5StxFRmXBM" target="_blank" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+          </span>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="../../../assets/hero-img.png" class="img-fluid animated" alt="hero">
+        </div>
       </div>
     </div>
-  </div>
-</div>
+
+  </section><!-- End Hero -->
+
+
+  <main id="main">
+
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+             We started our contribution towards the education of the Young India, since 2018, by means of offline coaching centres.
+            </p>
+            <ul>
+              <li><i class="bi bi-check-all"></i> We have experienced faculties in the stream of <span class="emph">English, Maths, Physics & Chemistry</span></li>
+              <li><i class="bi bi-check-all"></i> We don't make fake promises, we give results in <span class="emph">JEE, NDA, CDS, CGL</span> & different competitive exams.</li>
+              <li><i class="bi bi-check-all"></i> We provide modern facilities to our students, with 24 x 7 assistence for doubt queries.</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+               After being satisfied with the results of <span class="emph">50k+ students</span> we decided to reach more students worldwide and assist them in every possible way.
+               By means of this website we provide different services to students like <span class="emph">Mock Tests, Recorded Lectures, Live Classes, Study Materials, etc,</span>
+               all at very affordable price.
+            </p>
+            <a routerLink="/about" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Us Section -->
+
+
+   <!-- ======= Why Us Section ======= -->
+   <section id="why-us" class="why-us section-bg">
+    <div class="container-fluid" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+          <div class="content">
+            <h3>We are not a regular education specialists,</h3>
+            <h3><strong>We guarantee you to bring results </strong></h3>
+            <h3>just believe in us and be with us.</h3>
+             <p>
+            <strong>  We are carrying an ironwilling trust of more than 50k students with us.</strong>
+             </p>
+          </div>
+
+
+
+          <div class="accordion-list">
+            <ul>
+              <li>
+                <a><span>01</span>Support </a>
+                <div id="accordion-list-1" >
+                  <p>
+                    A teacher only guides you the best path, but we pushes you to do the best you can and support you in any possible way, like extra doubt sessions, crash courses, etc
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <a ><span>02</span> Experience </a>
+                <div id="accordion-list-2">
+                  <p>
+                   All our faculties are well experienced, and they know how to deal with dull students also.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <a ><span>03</span> Quality </a>
+                <div id="accordion-list-3" >
+                  <p>
+                  Our faculties not only provide their customised study materials, but they also follow a standard book in every subject.
+                  </p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("../../../assets/why-us.jpg");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
+            <img src="../../../assets/skills.jpg" class="img-fluid" alt="skills">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+            <h3>We Provide Guidance To Students For Different Exams</h3>
+            <p class="fst-italic">
+              Let it be Board Exams, with either CBSE or Any Other State Board, or any other Competitive Exam you just aim for it,
+              and we will tell you ,How to <strong>Crack</strong> it.
+              <br>
+              <strong>We have already enrolled different students, aiming for different exams, like</strong>
+            </p>
+
+            <div class="skills-content">
+
+              <div class="progress">
+                <span class="skill">Board Exams [CBSE,BSEB] <i class="val">100% Students</i></span>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">JEE<i class="val">90% Students</i></span>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">NDA <i class="val">75% Students</i></span>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">CGL <i class="val">90% Students</i></span>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill">CHSL <i class="val">70% Students</i></span>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill">CDS <i class="val">80% Students</i></span>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>We incorporate our experience and knowledge with todays technology to serve you in the best possible way</p>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <mat-icon>live_tv</mat-icon>
+              <h4><a href="">Interactive Live Classes</a></h4>
+              <p>We provide interactive live classes, so that studying don't get stop even in the pandemic days.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <mat-icon>videocam</mat-icon>
+              <h4><a href="">Recorded Video Lectures</a></h4>
+              <p>We provide recorded video lectures to our students in case if they want to complete the course in hurry to appear in an examination.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <mat-icon>quiz</mat-icon>
+              <h4><a href="">Mock Test Series</a></h4>
+              <p>We provide mock test papers of PYQs which are specially designed by our team to bring the best revision work for students.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-layer"></i></div>
+              <mat-icon>auto_stories</mat-icon>
+              <h4><a href="">Study Materials</a></h4>
+              <p>We provide study materials in PDF fromats which are valuable for revision as well as practice purpose.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3>Call To Action</h3>
+            <p>You can fill up the enquiry form, so that our executive get in touch with you as soon as possible</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#contact">Call To Action</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>The team who brings the magic, here</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="../../../assets/team/karan-sir.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Mr. Nitesh Karan</h4>
+                <span><strong>English Faculty</strong></span>
+                <p>10+ years of teaching experience</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="../../../assets/team/aman-sir.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Mr. Aman Kumar</h4>
+                <span><strong>Maths Faculty</strong></span>
+                <p>8+ years of teaching experience</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="../../../assets/team/mushir-sir.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Mr. Mushir Uddin</h4>
+                <span><strong>Physics Faculty</strong></span>
+                <p>9+ years of teaching experience</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="../../../assets/team/amit-sir.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Mr. Amit Kumar</h4>
+                <span><strong>Chemistry Faculty</strong></span>
+                <p>10+ years of teaching experience</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Pricing</h2>
+          <p>Once a wise man said <span class="emph">"Quality Never Comes Cheap"</span>, but are exceptionto this saying...</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="box">
+              <h3>Free Plan</h3>
+              <h4><sup>₹</sup>0<span>per month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i>You can mail us, and ask any doubt.</li>
+                <li><i class="bi bi-check"></i>Access to our Free Youtube Content</li>
+              </ul>
+              <a href="#" class="buy-btn-2">Get Started</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="box featured">
+              <h3>Basic Plan</h3>
+              <h4><sup>₹</sup>1500<span>per year</span></h4>
+              <ul>
+                <li><i class="bi bi-check-all"></i> Ask Doubts Anytime</li>
+                <li><i class="bi bi-check-all"></i>Access to our Free Youtube Content</li>
+                <li><i class="bi bi-check-all"></i>Access to our Mock Tests</li>
+                <li><i class="bi bi-check-all"></i> Access to our Study Materials</li>
+              </ul>
+              <a href="#" class="buy-btn-3">Get Started</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="box">
+              <h3>Premium Plan</h3>
+              <h4><sup>₹</sup>2800<span>per year</span></h4>
+              <ul>
+                <li><i class="bi bi-check-all"></i> Ask Doubts Anytime</li>
+                <li><i class="bi bi-check-all"></i>Access to our Free Youtube Content</li>
+                <li><i class="bi bi-check-all"></i> Access to our Live Class Sessions</li>
+                <li><i class="bi bi-check-all"></i> Access to our Mock Tests</li>
+                <li><i class="bi bi-check-all"></i> Access to our Recorded Lecture Videos</li>
+                <li><i class="bi bi-check-all"></i> Access to our Study Materials</li>
+              </ul>
+              <a href="#" class="buy-btn">Get Started</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Pricing Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Feel Free to Contact or Visit Us Anytime...</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+               <a href="https://www.google.com/maps/place/Educatree,+Bihta,+Bihar+801103/data=!4m2!3m1!1s0x398d55ef538d1eb5:0x147acef48982b3f3?utm_source=mstt_1&entry=gps&lucs=47062702&g_ep=CAESCTExLjY5LjQwMRgAIIgnKgg0NzA2MjcwMkICSU4%3D" target="_blank"> <i class="bi bi-geo-alt"></i> </a>
+                <h4>Location:</h4>
+                <p>Gultera Bazar, Bihta, Patna, India, 801103</p>
+              </div>
+
+              <div class="email">
+                <a href="mailto:educatree@gmail.com" className="p-text"> <i class="bi bi-envelope"></i> </a>
+                <h4>Email:</h4>
+                <p>educatree@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <a href="tel:+91 9473338882" className="p-text"> <i class="bi bi-phone"></i> </a>
+                <h4>Call:</h4>
+                <p>+91 947333882</p>
+              </div>
+              <agm-map [latitude]='latitude' [longitude]="longitude">
+
+              </agm-map>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+
+  <footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h4>Join Our Telegram Channel </h4>
+            <p>We post regular updates related to our study material and videos here, so join us to get the benefits...</p>
+             <a href="https://t.me/CareerwillApp" target="_blank"><button class="btn-tele"><i class="bi bi-telegram" style="font-size: 20px; padding: 2px; align-items: center;"></i></button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Educatree Classes</h3>
+            <p>
+              Gultera Baazar, Bihta, Patna <br>
+              Bihar, 801103<br>
+              India <br><br>
+              <strong>Phone:</strong>+91 9473338882, <br> +91 9631080753<br>
+              <strong>Email:</strong> educatree@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a routerLink="/fee-structure">Fee Structure</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a routerLink="/login">Login</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Follow Us on Various Platforms</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="youtube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Educatree</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed & Created by <a href="https://rahul8709-portfolio.netlify.app/" target="blank">Rahul Mishra</a>
+        <div class="social-links mt-3">
+          <a href="https://twitter.com/rahul870911" target="blank" class="twitter mr10"><i class="bi bi-twitter"></i></a>
+          <a href="mailto:rahulmishra05071999@gmail.com" class="bi-envelope-fill mr10"><i class="bi bi-envelope-at-fill"></i></a>
+          <a href="https://www.instagram.com/rahul870911/?igshid=NmQ2ZmYxZjA%3D" target="blank" class="instagram mr10"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.youtube.com/@fitnationindia7410" target="blank" class="youtube mr10"><i class="bi bi-youtube"></i></a>
+          <a href="https://www.linkedin.com/in/rahul-mishra-b1176b25b/" target="blank" class="linkedin mr10"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/rahul87911" target="blank" class="github mr10"><i class="bi bi-github"></i></a>
+          <a href="https://rahul8709-portfolio.netlify.app/" target="blank"><i class="bi bi-globe2"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+</body>
+</html>
 

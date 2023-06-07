@@ -1,3 +1,6 @@
+import { FooterComponent } from './components/footer/footer.component';
+
+import { FeeStructureComponent } from './pages/fee-structure/fee-structure.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { ViewAnswersComponent } from './pages/user/view-answers/view-answers.component';
@@ -27,6 +30,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import {ViewCategoriesComponent} from "./pages/admin/view-categories/view-categories.component";
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { VideoCoursesComponent } from './pages/admin/video-courses/video-courses.component';
+import { AddVideoComponent } from './pages/admin/add-video/add-video.component';
+import { StudyMaterialsComponent } from './pages/admin/study-materials/study-materials.component';
+import { AddStudyMaterialComponent } from './pages/admin/add-study-material/add-study-material.component';
+import { LiveClassComponent } from './pages/admin/live-class/live-class.component';
 
 
 const routes: Routes = [
@@ -55,6 +63,12 @@ const routes: Routes = [
     component:AboutComponent,
     pathMatch:'full'
   },
+  {
+    path:'fee-structure',
+    component:FeeStructureComponent,
+    pathMatch:'full'
+  },
+
 
   {
     path:'admin',
@@ -104,6 +118,26 @@ const routes: Routes = [
       {
         path:'question/:qid/:title/:quesid/:numberofquestions',
         component:UpdateQuestionComponent,
+      },
+      {
+        path:'video-courses',
+        component:VideoCoursesComponent,
+      },
+      {
+        path:'add-video-courses',
+        component:AddVideoComponent,
+      },
+      {
+        path:'study-materials',
+        component:StudyMaterialsComponent,
+      },
+      {
+        path:'add-study-materials',
+        component:AddStudyMaterialComponent,
+      },
+      {
+        path:'live-class',
+        component:LiveClassComponent,
       }
     ],
   },

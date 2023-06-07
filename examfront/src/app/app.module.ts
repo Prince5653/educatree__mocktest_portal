@@ -53,6 +53,14 @@ import { ViewAnswersComponent } from './pages/user/view-answers/view-answers.com
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FeeStructureComponent } from './pages/fee-structure/fee-structure.component';
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
+import { AgmCoreModule } from '@agm/core';
+import { VideoCoursesComponent } from './pages/admin/video-courses/video-courses.component';
+import { AddVideoComponent } from './pages/admin/add-video/add-video.component';
+import { StudyMaterialsComponent } from './pages/admin/study-materials/study-materials.component';
+import { AddStudyMaterialComponent } from './pages/admin/add-study-material/add-study-material.component';
+import { LiveClassComponent } from './pages/admin/live-class/live-class.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +92,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     ViewAnswersComponent,
     ContactUsComponent,
     AboutComponent,
+    FeeStructureComponent,
+    VideoCoursesComponent,
+    AddVideoComponent,
+    StudyMaterialsComponent,
+    AddStudyMaterialComponent,
+    LiveClassComponent,
+
 
   ],
   imports: [
@@ -110,6 +125,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatProgressSpinnerModule,
     MatMenuModule,
     ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBOAOnVs2PzLnw_-RvP_o43BPItyjnhgMI',
+    }),
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true,
+    })
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

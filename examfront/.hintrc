@@ -4,23 +4,24 @@
   ],
   "hints": {
     "disown-opener": "off",
-    "axe/name-role-value": [
-      "default",
-      {
-        "button-name": "off"
-      }
-    ],
+    "axe/name-role-value": "off",
     "button-type": "off",
-    "axe/aria": [
-      "default",
-      {
-        "aria-allowed-attr": "off"
-      }
-    ],
+    "axe/aria": "off",
     "axe/forms": [
       "default",
       {
         "label": "off"
+      }
+    ],
+    "axe/text-alternatives": "off",
+    "no-inline-styles": "off",
+    "compat-api/css": "off",
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "meta[name=theme-color]"
+        ]
       }
     ]
   }

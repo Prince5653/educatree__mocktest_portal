@@ -125,7 +125,7 @@
       <div class="mt10 ml10 mb10">
         <button  routerLink="/user-dashboard/user-home" mat-raised-button color="primary">Home</button>
         <button  [routerLink]="'/user-dashboard/'+cid"  class="ml10" mat-raised-button color="primary">Tests</button>
-        <button  [routerLink]="'/answers/'+cid+'/'+qid"  class="ml10" mat-raised-button color="primary">Answers</button>
+        <button *ngIf="questions[0].quiz.answers==true" [routerLink]="'/answers/'+cid+'/'+qid"  class="ml10" mat-raised-button color="primary">Answers</button>
        </div>
 
     </div>
