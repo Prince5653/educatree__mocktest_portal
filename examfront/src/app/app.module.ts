@@ -61,6 +61,9 @@ import { AddVideoComponent } from './pages/admin/add-video/add-video.component';
 import { StudyMaterialsComponent } from './pages/admin/study-materials/study-materials.component';
 import { AddStudyMaterialComponent } from './pages/admin/add-study-material/add-study-material.component';
 import { LiveClassComponent } from './pages/admin/live-class/live-class.component';
+import {AngularFireModule} from '@angular/fire/compat'
+import { enviroment } from './enviroments/enviroment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -125,6 +128,9 @@ import { LiveClassComponent } from './pages/admin/live-class/live-class.componen
     MatProgressSpinnerModule,
     MatMenuModule,
     ReactiveFormsModule,
+
+    AngularFireModule.initializeApp(enviroment.firebase),
+
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBOAOnVs2PzLnw_-RvP_o43BPItyjnhgMI',
     }),

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "educatree-4004b": {
+      "hosting": {
+        "examfront": [
+          "educatree-4004b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "educatree-4004b"
+  }
+}
