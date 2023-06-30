@@ -14,10 +14,13 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long cId;
 
+    private String courseTitle;
+
     private String subject;
 
     private String noOfLectures;
 
+    @Column(length = 10000)
     private String description;
 
     private String duration;
@@ -30,14 +33,15 @@ public class Course {
 
     private  boolean active = false;
 
-    @OneToMany(mappedBy = "course", fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "course",cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<Videos> videos = new LinkedHashSet<>();
 
     public Course() {
     }
 
-    public Course(String subject, String noOfLectures, String description, String duration, String faculty, String price, String validity, boolean active) {
+    public Course(String courseTitle, String subject, String noOfLectures, String description, String duration, String faculty, String price, String validity, boolean active) {
+        this.courseTitle = courseTitle;
         this.subject = subject;
         this.noOfLectures = noOfLectures;
         this.description = description;
@@ -50,6 +54,14 @@ public class Course {
 
     public Long getcId() {
         return cId;
+    }
+
+    public String getCourseTitle() {
+        return courseTitle;
+    }
+
+    public void setCourseTitle(String courseTitle) {
+        this.courseTitle = courseTitle;
     }
 
     public void setcId(Long cId) {

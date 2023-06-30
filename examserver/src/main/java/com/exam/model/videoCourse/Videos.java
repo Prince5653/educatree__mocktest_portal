@@ -9,6 +9,7 @@ public class Videos {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long vID;
 
+    @Column(length = 10000)
     private String url;
 
     @ManyToOne(fetch = FetchType.EAGER)

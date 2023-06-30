@@ -8,4 +8,6 @@ import java.util.Set;
 
 public interface VideosRepository extends JpaRepository<Videos,Long> {
     Set<Videos> findByCourse(Course course);
+
+
 }

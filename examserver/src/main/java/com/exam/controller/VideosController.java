@@ -3,6 +3,7 @@ package com.exam.controller;
 
 import com.exam.model.videoCourse.Course;
 import com.exam.model.videoCourse.Videos;
+import com.exam.service.CourseService;
 import com.exam.service.VideosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,9 @@ public class VideosController {
 
     @Autowired
     private VideosService videosService;
+
+    @Autowired
+    private CourseService courseService;
 
     //add-video
     @PostMapping("/")
@@ -41,7 +45,7 @@ public class VideosController {
 
     //get-video
     @GetMapping("/{vID}")
-    public Vide os videos(@PathVariable("vID") Long vID)
+    public Videos videos(@PathVariable("vID") Long vID)
     {
         return this.videosService.getVideo(vID);
     }

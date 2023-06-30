@@ -48,8 +48,6 @@ public class VideosServiceImpl implements VideosService {
     @Override
     public void deleteVideo(Long vId) {
 
-        Videos videos = new Videos();
-        videos.setvID(vId);
         this.videosRepository.deleteById(vId);
     }
 }

@@ -1,9 +1,6 @@
 package com.exam.model.studyMaterial;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class PdfMaterial {
@@ -18,15 +15,19 @@ public class PdfMaterial {
     private String subject;
     private String topic;
 
+    @Column(length = 10000)
+    private String url;
+
     public PdfMaterial() {
     }
 
-    public PdfMaterial(String title, String faculty, String date, String subject, String topic) {
+    public PdfMaterial(String title, String faculty, String date, String subject, String topic, String url) {
         this.title = title;
         this.faculty = faculty;
         this.date = date;
         this.subject = subject;
         this.topic = topic;
+        this.url = url;
     }
 
     public Long getPdfID() {
@@ -75,5 +76,13 @@ public class PdfMaterial {
 
     public void setTopic(String topic) {
         this.topic = topic;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
