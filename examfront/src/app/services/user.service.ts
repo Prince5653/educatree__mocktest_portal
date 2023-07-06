@@ -28,4 +28,5 @@ public updateUser(user:any)
 {
   return this.http.put(`${baseUrl}/user/`,user);
 }
+
 }

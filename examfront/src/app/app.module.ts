@@ -63,6 +63,9 @@ import { AddStudyMaterialComponent } from './pages/admin/add-study-material/add-
 import { LiveClassComponent } from './pages/admin/live-class/live-class.component';
 import {AngularFireModule} from '@angular/fire/compat'
 import { enviroment } from './enviroments/enviroment';
+import { VideoUrlComponent } from './pages/admin/video-url/video-url.component';
+import { UpdateVideoUrlComponent } from './pages/admin/update-video-url/update-video-url.component';
+import { UpdatePdfComponent } from './pages/admin/update-pdf/update-pdf.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +104,9 @@ import { enviroment } from './enviroments/enviroment';
     StudyMaterialsComponent,
     AddStudyMaterialComponent,
     LiveClassComponent,
+    VideoUrlComponent,
+    UpdateVideoUrlComponent,
+    UpdatePdfComponent,
 
 
   ],

@@ -13,16 +13,22 @@ import { data } from 'jquery';
 })
 export class UpdateUserComponent implements OnInit{
 
-  Id:any;
-  user:any;
+
+  user={
+    id:'',
+    username:'',
+    firstName:'',
+    lastName:'',
+    email:'',
+    phone:''
+  };
   constructor (private _route:ActivatedRoute, private _router:Router, private _user:UserService, private _login:LoginService,private _snack:MatSnackBar) {}
 
   ngOnInit(): void {
     this.user = this._login.getUser();
-     this.Id=this.user.id;
   }
 
-  updateUser()
+  public updateUser()
   {
     if(this.user.username.trim()=='' || this.user.username==null)
         {
@@ -55,9 +61,9 @@ export class UpdateUserComponent implements OnInit{
       if(result.isConfirmed)
       {
        this._user.updateUser(this.user).subscribe((data:any)=>{
-        console.log(this.user);
 
         Swal.fire('Success','User Details Updated Successfully','success').then((e)=>{
+
           this._router.navigate(['/admin/profile'])});
        },(error)=>{
         Swal.fire("Error !!", "Error in updating data", 'error');
@@ -66,5 +72,17 @@ export class UpdateUserComponent implements OnInit{
   })
 }
 
+
+public update()
+{
+  this._user.updateUser(this.user).subscribe(
+    (data:any)=>{
+      console.log(this.user)
+    },
+    (error)=>{
+      console.log(error)
+    }
+  )
+}
 
 }

@@ -23,7 +23,7 @@ export class AddCategoryComponent implements OnInit {
   formSubmit()
   {
     if(this.category.title.trim() == '' || this.category.title == null){
-      this._snack.open('Title Required !!', '',{
+      this._snack.open('Title is Required !!', '',{
         duration:3000,
       });
       return;
