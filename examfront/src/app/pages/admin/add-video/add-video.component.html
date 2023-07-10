@@ -6,20 +6,20 @@
       <form (ngSubmit)="courseSubmit()">
         <mat-form-field class="w100" appearance="fill">
           <mat-label>Enter Course Title</mat-label>
-          <input [(ngModel)]="course.title" type="text" name="title" placeholder="Enter here" matInput ngModel />
+          <input [(ngModel)]="course.courseTitle" type="text" name="title" placeholder="Enter here" matInput ngModel />
         </mat-form-field>
 
         <div class="row">
           <div class="col-md-6">
             <mat-form-field class="w100 " appearance="fill">
               <mat-label>Number of Lectures</mat-label>
-              <input [(ngModel)]="course.noLectures" type="text" name="noLectures" placeholder="Enter here" matInput ngModel/>
+              <input [(ngModel)]="course.noOfLectures" type="text" name="noLectures" placeholder="Enter here" matInput ngModel/>
             </mat-form-field>
           </div>
           <div class="col-md-6">
             <mat-form-field class="w100" appearance="fill">
               <mat-label>Course Length</mat-label>
-              <input [(ngModel)]="course.courseLength" type="text" name="courseLength" placeholder="Enter Hours" matInput ngModel/>
+              <input [(ngModel)]="course.duration" type="text" name="courseLength" placeholder="Enter Hours" matInput ngModel/>
             </mat-form-field>
           </div>
         </div>

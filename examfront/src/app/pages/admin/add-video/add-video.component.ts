@@ -17,9 +17,9 @@ import Swal from 'sweetalert2';
 export class AddVideoComponent implements OnInit {
 
   course={
-    title:'',
-    noLectures:'',
-    courseLength:'',
+    courseTitle:'',
+    noOfLectures:'',
+    duration:'',
     price:'',
     validity:'',
     subject:'',
@@ -34,7 +34,7 @@ export class AddVideoComponent implements OnInit {
   courseSubmit()
   {
     //validation
-    if(this.course.title.trim() == '' || this.course.title == null)
+    if(this.course.courseTitle.trim() == '' || this.course.courseTitle == null)
     {
       this._snack.open('Title of the Course is Required !!', '',{
       duration:3000,
@@ -42,7 +42,7 @@ export class AddVideoComponent implements OnInit {
       return;
     }
 
-    if(this.course.noLectures.trim() == '' || this.course.noLectures == null)
+    if(this.course.noOfLectures.trim() == '' || this.course.noOfLectures == null)
     {
       this._snack.open('Number of Lectures is Required !!', '',{
       duration:3000,
@@ -50,7 +50,7 @@ export class AddVideoComponent implements OnInit {
       return;
     }
 
-    if(this.course.courseLength.trim() == '' || this.course.courseLength == null)
+    if(this.course.duration.trim() == '' || this.course.duration == null)
     {
       this._snack.open('Length of the Course is Required !!', '',{
       duration:3000,
@@ -92,13 +92,13 @@ export class AddVideoComponent implements OnInit {
 
     this._course.addCourse(this.course).subscribe(
       (data:any)=>{
-        this.course.title='';
-        this.course.noLectures='';
-        this.course.courseLength;
-        this.course.price;
-        this.course.validity;
-        this.course.subject;
-        this.course.faculty;
+        this.course.courseTitle='';
+        this.course.noOfLectures='';
+        this.course.duration='';
+        this.course.price='';
+        this.course.validity='';
+        this.course.subject='';
+        this.course.faculty='';
         Swal.fire('Success !!','Added Successfully','success');
       },
       (error)=>{
