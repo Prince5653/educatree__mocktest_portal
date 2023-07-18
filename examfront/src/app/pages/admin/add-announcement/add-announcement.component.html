@@ -1,0 +1,125 @@
+<mat-card class="mt10" >
+    <h1 class="ml20 mt10">Add Announcement</h1>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+  
+        <form>
+          <!-- title -->
+        <mat-form-field class="w100" appearance="fill">
+          <mat-label>Enter Title</mat-label>
+          <input  type="text" name="title" placeholder="Enter here" matInput />
+        </mat-form-field>
+          <!-- description -->
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Enter Description</mat-label>
+            <textarea   type="text" name="description" placeholder="Enter here" matInput rows="5" ></textarea>
+          </mat-form-field>
+  
+          <div class="row">
+            <div class="col-md-6">
+              <!-- maxmarks -->
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Maximum Marks</mat-label>
+                <input   type="number" name="maxMarks" placeholder="Enter here" matInput />
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <!-- numberofqquestions -->
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Number of Questions</mat-label>
+                <input  type="number" name="numberOfQuestions" placeholder="Enter here" matInput />
+              </mat-form-field>
+            </div>
+          </div>
+  
+  
+          <div class="row">
+            <div class="col-md-6">
+                     <!-- category -->
+           <mat-form-field appearance="fill" class="w100">
+            <mat-label>Category</mat-label>
+            <mat-select  name="category"  >
+              <mat-option >
+               
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-6 ">
+                 <!-- pasmarks -->
+                 <mat-form-field appearance="fill" >
+                   <mat-label>Passing Percentage</mat-label>
+                   <input type="number" name="passMarks" placeholder="Enter here" matInput />
+                 </mat-form-field>
+                </div>
+                <div class="col-md-6 ">
+                  <!-- attempts -->
+                 <mat-form-field appearance="fill" class="w75">
+                   <mat-label>Max Attempts</mat-label>
+                   <input  type="number" name="attempts" placeholder="Enter here" class="ml10" matInput />
+                 </mat-form-field>
+                </div>
+             </div>
+  
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6">
+  
+              <!-- timeCons -->
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Time Alloted</mat-label>
+                <input type="number" name="timeCons" placeholder="for each question (in seconds)" matInput />
+              </mat-form-field>
+  
+            </div>
+  
+            <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-4">
+              <!-- marking-scheme -->
+             <mat-slide-toggle  name="markingScheme"  class="">
+              Positive Marking
+             </mat-slide-toggle>
+              </div>
+  
+              <div class="col-md-4">
+                 <!-- status-active -->
+              <mat-slide-toggle name="active"  class="mt10 mb20">
+                Publish
+              </mat-slide-toggle>
+              </div>
+  
+              <div class="col-md-4">
+                  <!-- show-answers-->
+              <mat-slide-toggle  name="answers"  class=" mb20">
+                Show Answers
+              </mat-slide-toggle>
+              </div>
+                </div>
+                </div>
+               </div>
+               <mat-divider></mat-divider>
+  
+               <div class="mt10 mb10 text-center">
+                <button mat-raised-button color="primary" >Add</button>
+                <button type="reset" mat-raised-button color="primary" class="ml20">Reset</button>
+              </div>
+  
+        </form>
+  
+  
+  
+      </div>
+    </div>
+    </div>
+  </mat-card>
+  
+  
+  
+  

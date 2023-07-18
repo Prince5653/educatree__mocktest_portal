@@ -35,6 +35,7 @@ import { AddVideoComponent } from './pages/admin/add-video/add-video.component';
 import { StudyMaterialsComponent } from './pages/admin/study-materials/study-materials.component';
 import { AddStudyMaterialComponent } from './pages/admin/add-study-material/add-study-material.component';
 import { LiveClassComponent } from './pages/admin/live-class/live-class.component';
+import { AddAnnouncementComponent } from './pages/admin/add-announcement/add-announcement.component';
 
 
 const routes: Routes = [
@@ -86,6 +87,10 @@ const routes: Routes = [
       {
         path:'profile',
         component: ProfileComponent,
+      },
+      {
+        path:'announcement',
+        component: AddAnnouncementComponent
       },
       {
         path:'categories',
