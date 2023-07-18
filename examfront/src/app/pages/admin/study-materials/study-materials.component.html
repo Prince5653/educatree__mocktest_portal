@@ -12,10 +12,10 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-flat-button color="primary">{{p.subject}}</button>
-    <button mat-flat-button color="primary" class="ml10">Update</button>
+    <button mat-flat-button [routerLink]="'/admin/update-study-materials/'+ p.pdfID+'/'+p.title" color="primary" class="ml10">Update</button>
     <button mat-stroked-button color="accent" class="ml20">Faculty: {{p.faculty}}</button>
     <button mat-stroked-button color="accent" class="ml20">Lectures: {{p.date}}</button>
-    <button mat-flat-button class="ml20"  (click)="deletepdf(p.pdfId)" ><mat-icon >delete</mat-icon></button>
+    <button mat-flat-button class="ml20" (click)="deletePdf(p.pdfID)" ><mat-icon >delete</mat-icon></button>
   </mat-card-actions>
   </mat-card>
 

@@ -66,6 +66,8 @@ import { enviroment } from './enviroments/enviroment';
 import { VideoUrlComponent } from './pages/admin/video-url/video-url.component';
 import { UpdateVideoUrlComponent } from './pages/admin/update-video-url/update-video-url.component';
 import { UpdatePdfComponent } from './pages/admin/update-pdf/update-pdf.component';
+import { UpdateCoursesComponent } from './pages/admin/update-courses/update-courses.component';
+import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +109,8 @@ import { UpdatePdfComponent } from './pages/admin/update-pdf/update-pdf.componen
     VideoUrlComponent,
     UpdateVideoUrlComponent,
     UpdatePdfComponent,
+    UpdateCoursesComponent,
+    AddVideoUrlComponent,
 
 
   ],

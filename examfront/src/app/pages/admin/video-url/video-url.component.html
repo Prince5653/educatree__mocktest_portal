@@ -1,1 +1,30 @@
-<p>video-url works!</p>
+
+<h1 class="ml20 mt10">Videos of {{courseTitle}}</h1>
+<div class="bootstrap-wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container text-center">
+        <button *ngIf="i != cNumberOfLectures && i < cNumberOfLectures"  [routerLink]="'/admin/add-video-url/'+cId+'/'+courseTitle+'/'+ cNumberOfLectures+'/'+i" mat-raised-button color="primary">Add URL</button>
+      </div>
+
+
+      <mat-card *ngFor="let v of videos ; let i = index" class="mt20">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>
+            {{v.title}}
+          </mat-card-title>
+          </mat-card-header>
+
+          <mat-divider></mat-divider>
+
+          <mat-card-actions class="ml20" >
+            <button mat-button (click)="deleteURL(v.vID)"> <mat-icon>delete</mat-icon></button>
+            <button [routerLink]="'/admin/update-video-url/'+cId+'/'+courseTitle+'/'+cNumberOfLectures+'/'+v.vID+'/'+v.title" mat-button class="ml10" > <mat-icon><span> upgrade </span></mat-icon></button>
+          </mat-card-actions>
+        </mat-card>
+
+
+    </div>
+  </div>
+</div>

@@ -9,6 +9,7 @@ public class Videos {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long vID;
 
+    private  String title;
     @Column(length = 10000)
     private String url;
 
@@ -16,6 +17,14 @@ public class Videos {
     private  Course course;
 
     public Videos() {
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Long getvID() {
