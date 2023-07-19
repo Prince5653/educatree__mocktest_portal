@@ -4,7 +4,6 @@ import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -66,12 +65,12 @@ import { enviroment } from './enviroments/enviroment';
 import { VideoUrlComponent } from './pages/admin/video-url/video-url.component';
 import { UpdateVideoUrlComponent } from './pages/admin/update-video-url/update-video-url.component';
 import { UpdatePdfComponent } from './pages/admin/update-pdf/update-pdf.component';
-<<<<<<< HEAD
 import { AddAnnouncementComponent } from './pages/admin/add-announcement/add-announcement.component';
-=======
 import { UpdateCoursesComponent } from './pages/admin/update-courses/update-courses.component';
 import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.component';
-=======
+import { AppRoutingModule } from './app-routing.module';
+
+
 
 @NgModule({
   declarations: [
@@ -113,16 +112,12 @@ import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.
     VideoUrlComponent,
     UpdateVideoUrlComponent,
     UpdatePdfComponent,
-<<<<<<< HEAD
-    AddAnnouncementComponent,
-=======
     UpdateCoursesComponent,
     AddVideoUrlComponent,
-=======
->>>>>>> parent of 43ccefc (videos and pdf fully binded)
-
-
+    AddAnnouncementComponent,
   ],
+
+  
   imports: [
     BrowserModule,
     AppRoutingModule,

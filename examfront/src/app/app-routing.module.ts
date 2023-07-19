@@ -35,12 +35,14 @@ import { AddVideoComponent } from './pages/admin/add-video/add-video.component';
 import { StudyMaterialsComponent } from './pages/admin/study-materials/study-materials.component';
 import { AddStudyMaterialComponent } from './pages/admin/add-study-material/add-study-material.component';
 import { LiveClassComponent } from './pages/admin/live-class/live-class.component';
-<<<<<<< HEAD
+
 import { AddAnnouncementComponent } from './pages/admin/add-announcement/add-announcement.component';
-=======
+
 import { VideoUrlComponent } from './pages/admin/video-url/video-url.component';
 import { UpdateVideoUrlComponent } from './pages/admin/update-video-url/update-video-url.component';
 import { UpdatePdfComponent } from './pages/admin/update-pdf/update-pdf.component';
+import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.component';
+import { UpdateCoursesComponent } from './pages/admin/update-courses/update-courses.component';
 
 
 const routes: Routes = [
