@@ -20,7 +20,13 @@ export class VideoUrlComponent implements OnInit {
   cId:any;
   courseTitle:any;
   cNumberOfLectures:any;
-  videos:any= [];
+  videos:any= [
+    {
+      vID:'',
+      title:'',
+      url:''
+    }
+  ];
   i:any;
 
   constructor (private _course:VideoService, private _snack:MatSnackBar, private _video:VideoUrlService, private _router:Router,private _route:ActivatedRoute) {}
@@ -34,10 +40,12 @@ export class VideoUrlComponent implements OnInit {
     this.courseTitle=this._route.snapshot.params['courseTitle'];
 
 
+
     this._video.getAllUrl(this.cId).subscribe((data:any)=>{
-      console.log(data);
+
       this.videos=data;
       this.i=this.videos.length;
+      console.log(this.videos)
     },(error)=>{
       console.log(error);
     })
@@ -45,7 +53,7 @@ export class VideoUrlComponent implements OnInit {
 
 
 
-  
+
 
    //delete
    deleteURL(vID:any){

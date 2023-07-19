@@ -11,20 +11,9 @@ export class VideoCoursesComponent implements OnInit{
 
   constructor (private _course:VideoService) {}
 
-  courses=[
-    {
-      cId: '',
-      courseTitle:'',
-      noOfLectures:'',
-      description:'',
-      duration:'',
-      active:'',
-      subject:'',
-      price:'',
-      validity:'',
-      faculty:''
-    },
-  ];
+Id:any
+
+  courses:any=[];
 
   ngOnInit(): void {
  this._course.courses().subscribe(
@@ -38,12 +27,13 @@ export class VideoCoursesComponent implements OnInit{
     Swal.fire("Error !!", "Error in loading data", 'error');
   }
  )
+this.Id=this.courses.cId;
   }
 
 
 
-  
-  deleteCourse(cId:any)
+
+  deleteCourse(Id:any)
   {
    Swal.fire({
     icon:'warning',
@@ -54,9 +44,9 @@ export class VideoCoursesComponent implements OnInit{
     if(result.isConfirmed)
     {
       //delete
-      this._course.deleteCourse(cId).subscribe(
+      this._course.deleteCourse(Id).subscribe(
         (data)=>{
-          this.courses = this.courses.filter((course)=> course.cId != cId);
+          this.courses = this.courses.filter((course:any)=> course.cId != Id);
           Swal.fire('Success','Video Course Deleted','success');
         },
         (error)=>{

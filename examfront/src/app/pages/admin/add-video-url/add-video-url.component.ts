@@ -31,6 +31,8 @@ export class AddVideoUrlComponent  implements OnInit{
   this.Url.course['cId'] = this.CoId;
   }
 
+
+  
   dataSubmit(){
 
     //validation
@@ -53,7 +55,7 @@ export class AddVideoUrlComponent  implements OnInit{
 
     this._url.addUrl(this.Url).subscribe(
       (data:any)=>{
-        Swal.fire('Success','Question Added Successfully','success').then((e)=>{
+        Swal.fire('Success','URL added Successfully','success').then((e)=>{
           this._router.navigate(['/admin/videos-url/'+this.CoId+'/'+this.coTitle+'/'+this.noOfLectures]);
         });
       },
