@@ -35,17 +35,24 @@ import { AddVideoComponent } from './pages/admin/add-video/add-video.component';
 import { StudyMaterialsComponent } from './pages/admin/study-materials/study-materials.component';
 import { AddStudyMaterialComponent } from './pages/admin/add-study-material/add-study-material.component';
 import { LiveClassComponent } from './pages/admin/live-class/live-class.component';
+<<<<<<< HEAD
+import { AddAnnouncementComponent } from './pages/admin/add-announcement/add-announcement.component';
+=======
 import { UpdateCoursesComponent } from './pages/admin/update-courses/update-courses.component';
 import { VideoUrlComponent } from './pages/admin/video-url/video-url.component';
 import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.component';
 import { UpdateVideoUrlComponent } from './pages/admin/update-video-url/update-video-url.component';
 import { UpdatePdfComponent } from './pages/admin/update-pdf/update-pdf.component';
+<<<<<<< HEAD
 import { ViewMyCourseVideosComponent } from './pages/user/view-my-course-videos/view-my-course-videos.component';
 import { ViewMyCoursesComponent } from './pages/user/view-my-courses/view-my-courses.component';
 import { ViewCoursesComponent } from './pages/user/view-courses/view-courses.component';
 import { ViewCourseVideosComponent } from './pages/user/view-course-videos/view-course-videos.component';
 import { ViewStudyMaterialComponent } from './pages/user/view-study-material/view-study-material.component';
 import { ViewClassesComponent } from './pages/user/view-classes/view-classes.component';
+=======
+>>>>>>> 43ccefcac1bf83a53d06bb30402ca02b506804ba
+>>>>>>> 33d061bf969949dcadbbccaca8e55ce4b7b00e0a
 
 
 const routes: Routes = [
@@ -97,6 +104,10 @@ const routes: Routes = [
       {
         path:'profile',
         component: ProfileComponent,
+      },
+      {
+        path:'announcement',
+        component: AddAnnouncementComponent
       },
       {
         path:'categories',

@@ -66,14 +66,11 @@ import { enviroment } from './enviroments/enviroment';
 import { VideoUrlComponent } from './pages/admin/video-url/video-url.component';
 import { UpdateVideoUrlComponent } from './pages/admin/update-video-url/update-video-url.component';
 import { UpdatePdfComponent } from './pages/admin/update-pdf/update-pdf.component';
+<<<<<<< HEAD
+import { AddAnnouncementComponent } from './pages/admin/add-announcement/add-announcement.component';
+=======
 import { UpdateCoursesComponent } from './pages/admin/update-courses/update-courses.component';
 import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.component';
-import { ViewCoursesComponent } from './pages/user/view-courses/view-courses.component';
-import { ViewMyCoursesComponent } from './pages/user/view-my-courses/view-my-courses.component';
-import { ViewCourseVideosComponent } from './pages/user/view-course-videos/view-course-videos.component';
-import { ViewMyCourseVideosComponent } from './pages/user/view-my-course-videos/view-my-course-videos.component';
-import { ViewStudyMaterialComponent } from './pages/user/view-study-material/view-study-material.component';
-import { ViewClassesComponent } from './pages/user/view-classes/view-classes.component';
 
 @NgModule({
   declarations: [
@@ -115,14 +112,11 @@ import { ViewClassesComponent } from './pages/user/view-classes/view-classes.com
     VideoUrlComponent,
     UpdateVideoUrlComponent,
     UpdatePdfComponent,
+<<<<<<< HEAD
+    AddAnnouncementComponent,
+=======
     UpdateCoursesComponent,
     AddVideoUrlComponent,
-    ViewCoursesComponent,
-    ViewMyCoursesComponent,
-    ViewCourseVideosComponent,
-    ViewMyCourseVideosComponent,
-    ViewStudyMaterialComponent,
-    ViewClassesComponent,
 
 
   ],
