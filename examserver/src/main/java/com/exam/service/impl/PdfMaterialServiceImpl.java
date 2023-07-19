@@ -33,14 +33,17 @@ public class PdfMaterialServiceImpl implements PdfMaterialService {
 
     @Override
     public PdfMaterial getPdf(Long pdfID) {
-        return this.pdfMaterialRepository.findById(pdfID).get();
+        return this.pdfMaterialRepository.findById((pdfID)).get();
     }
 
     @Override
     public void deletePdf(Long pdfID) {
-
         PdfMaterial pdfMaterial = new PdfMaterial();
-        pdfMaterial.setPdfID(pdfID);
-        this.pdfMaterialRepository.deleteById(pdfID);
+        pdfMaterial.setPdfID((pdfID));
+        this.pdfMaterialRepository.delete(pdfMaterial);
     }
+
+
+
+
 }
