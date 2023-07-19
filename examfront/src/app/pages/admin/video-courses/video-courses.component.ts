@@ -40,9 +40,6 @@ export class VideoCoursesComponent implements OnInit{
  )
   }
 
-
-
-  
   deleteCourse(cId:any)
   {
    Swal.fire({

@@ -67,10 +67,13 @@ import { VideoUrlComponent } from './pages/admin/video-url/video-url.component';
 import { UpdateVideoUrlComponent } from './pages/admin/update-video-url/update-video-url.component';
 import { UpdatePdfComponent } from './pages/admin/update-pdf/update-pdf.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { AddAnnouncementComponent } from './pages/admin/add-announcement/add-announcement.component';
 =======
 import { UpdateCoursesComponent } from './pages/admin/update-courses/update-courses.component';
 import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.component';
+=======
+>>>>>>> parent of 43ccefc (videos and pdf fully binded)
 
 @NgModule({
   declarations: [
@@ -113,10 +116,13 @@ import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.
     UpdateVideoUrlComponent,
     UpdatePdfComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
     AddAnnouncementComponent,
 =======
     UpdateCoursesComponent,
     AddVideoUrlComponent,
+=======
+>>>>>>> parent of 43ccefc (videos and pdf fully binded)
 
 
   ],

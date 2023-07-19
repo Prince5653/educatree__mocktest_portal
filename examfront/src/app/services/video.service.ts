@@ -24,7 +24,7 @@ export class VideoService {
   //update-course
   public updateCourse(course:any)
   {
-    return this._http.put(`${baseUrl}/course/` ,course );
+    return this._http.put(`${baseUrl}/` ,course );
   }
 
   //load single course

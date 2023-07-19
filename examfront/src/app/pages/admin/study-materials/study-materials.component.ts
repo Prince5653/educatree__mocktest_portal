@@ -9,25 +9,17 @@ import Swal from 'sweetalert2';
 })
 export class StudyMaterialsComponent implements OnInit{
 
-
-
-
   pdfs=[
     {
-      pdfID: '',
+      pdfId: '',
+      url:'',
       title:'',
       date:'',
-
       subject:'',
       topic:'',
-
       faculty:''
     },
   ];
-
-
-
-
 
   constructor (private _pdf:PdfService) {}
 
@@ -37,44 +29,38 @@ export class StudyMaterialsComponent implements OnInit{
       (data:any)=>{
         this.pdfs=data;
         console.log(this.pdfs);
-
       },
       (error)=>{
         console.log(error);
         Swal.fire("Error !!", "Error in loading data", 'error');
       }
     )
-
-
-
   }
 
 
-   //delete-quiz
-   deletePdf(pdfID:any)
-   {
-    Swal.fire({
-     icon:'warning',
-     title:"Are you sure to delete this quiz ?",
-     confirmButtonText:'Delete',
-     showCancelButton: true,
-    }).then((result)=>{
-     if(result.isConfirmed)
-     {
-       //delete
-       this._pdf.deletePdf(pdfID).subscribe(
-         (data)=>{
-
-          this.pdfs = this.pdfs.filter((pdf)=> pdf.pdfID != pdfID);
-           Swal.fire('Success','Study Material Deleted','success');
-         },
-         (error)=>{
-           Swal.fire("Error !!", "Error in deleting data", 'error');
-         }
-        );
-     }
-    })
-   }
+ deletepdf(pdfId:any)
+  {
+   Swal.fire({
+    icon:'warning',
+    title:"Are you sure to delete this PDF Study Material ?",
+    confirmButtonText:'Delete',
+    showCancelButton: true,
+   }).then((result)=>{
+    if(result.isConfirmed)
+    {
+      //delete
+      this._pdf.deletePdf(pdfId).subscribe(
+        (data)=>{
+          this.pdfs = this.pdfs.filter((pdf)=> pdf.pdfId != pdfId);
+          Swal.fire('Success','PDF Study Material Deleted','success');
+        },
+        (error)=>{
+          Swal.fire("Error !!", "Error in deleting data", 'error');
+        }
+       );
+    }
+   })
+  }
 
 
 

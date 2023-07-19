@@ -14,8 +14,8 @@
     <p>{{c.description}}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-flat-button color="primary" [routerLink]="'/admin/videos-url/'+c.cId+'/'+c.courseTitle+'/'+c.noOfLectures">Add Videos</button>
-    <button mat-flat-button color="primary" [routerLink]="'/admin/update-video-courses/'+c.cId" class="ml10">Update</button>
+    <button mat-flat-button color="primary">Add Videos</button>
+    <button mat-flat-button color="primary" class="ml10">Update</button>
     <button mat-stroked-button color="accent" class="ml20">Faculty:{{c.faculty}}</button>
     <button mat-stroked-button color="accent" class="ml20">Lectures:{{c.noOfLectures}}</button>
     <button mat-stroked-button color="accent" class="ml10">Duration:{{c.duration}} hrs</button>
