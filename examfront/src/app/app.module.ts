@@ -66,7 +66,12 @@ import { enviroment } from './enviroments/enviroment';
 import { VideoUrlComponent } from './pages/admin/video-url/video-url.component';
 import { UpdateVideoUrlComponent } from './pages/admin/update-video-url/update-video-url.component';
 import { UpdatePdfComponent } from './pages/admin/update-pdf/update-pdf.component';
+<<<<<<< HEAD
 import { AddAnnouncementComponent } from './pages/admin/add-announcement/add-announcement.component';
+=======
+import { UpdateCoursesComponent } from './pages/admin/update-courses/update-courses.component';
+import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.component';
+>>>>>>> 43ccefcac1bf83a53d06bb30402ca02b506804ba
 
 @NgModule({
   declarations: [
@@ -108,7 +113,12 @@ import { AddAnnouncementComponent } from './pages/admin/add-announcement/add-ann
     VideoUrlComponent,
     UpdateVideoUrlComponent,
     UpdatePdfComponent,
+<<<<<<< HEAD
     AddAnnouncementComponent,
+=======
+    UpdateCoursesComponent,
+    AddVideoUrlComponent,
+>>>>>>> 43ccefcac1bf83a53d06bb30402ca02b506804ba
 
 
   ],
