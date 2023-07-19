@@ -68,6 +68,12 @@ import { UpdateVideoUrlComponent } from './pages/admin/update-video-url/update-v
 import { UpdatePdfComponent } from './pages/admin/update-pdf/update-pdf.component';
 import { UpdateCoursesComponent } from './pages/admin/update-courses/update-courses.component';
 import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.component';
+import { ViewCoursesComponent } from './pages/user/view-courses/view-courses.component';
+import { ViewMyCoursesComponent } from './pages/user/view-my-courses/view-my-courses.component';
+import { ViewCourseVideosComponent } from './pages/user/view-course-videos/view-course-videos.component';
+import { ViewMyCourseVideosComponent } from './pages/user/view-my-course-videos/view-my-course-videos.component';
+import { ViewStudyMaterialComponent } from './pages/user/view-study-material/view-study-material.component';
+import { ViewClassesComponent } from './pages/user/view-classes/view-classes.component';
 
 @NgModule({
   declarations: [
@@ -111,6 +117,12 @@ import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.
     UpdatePdfComponent,
     UpdateCoursesComponent,
     AddVideoUrlComponent,
+    ViewCoursesComponent,
+    ViewMyCoursesComponent,
+    ViewCourseVideosComponent,
+    ViewMyCourseVideosComponent,
+    ViewStudyMaterialComponent,
+    ViewClassesComponent,
 
 
   ],

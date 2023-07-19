@@ -4,7 +4,7 @@
 }
 
 .header-image {
-  background-image: url('../../../../assets/test.png');
+  background-image: url('../../../../assets/montage.png');
   background-size: cover;
 }
 
@@ -19,3 +19,8 @@
 .ml{
   margin-left: 2px;
 }
+
+.ml140{
+  margin-left:140px;
+}
+
