@@ -191,15 +191,11 @@ const routes: Routes = [
         component:UserHomeComponent,
       },
       {
-        path:'news',
-        component:NewsComponent,
-      },
-      {
         path:'courses',
         component:ViewVideoCoursesComponent,
       },
       {
-        path:'courses/:cId',
+        path:'courses/:courseTitle/:cId',
         component:ViewCourseVideosComponent,
       },
       {

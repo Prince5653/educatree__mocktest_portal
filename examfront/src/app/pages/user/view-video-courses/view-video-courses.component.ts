@@ -24,7 +24,7 @@ export class ViewVideoCoursesComponent implements OnInit {
     }
   ];
 
-    id:any
+   
 
 
 
