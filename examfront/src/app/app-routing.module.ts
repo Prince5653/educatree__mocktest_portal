@@ -43,12 +43,24 @@ import { UpdateVideoUrlComponent } from './pages/admin/update-video-url/update-v
 import { UpdatePdfComponent } from './pages/admin/update-pdf/update-pdf.component';
 import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.component';
 import { UpdateCoursesComponent } from './pages/admin/update-courses/update-courses.component';
+import { NewsComponent } from './pages/news/news.component';
+import { ViewClassComponent } from './pages/user/view-class/view-class.component';
+import { ViewVideoCoursesComponent } from './pages/user/view-video-courses/view-video-courses.component';
+import { ViewCourseVideosComponent } from './pages/user/view-course-videos/view-course-videos.component';
+import { ViewMyCoursesComponent } from './pages/user/view-my-courses/view-my-courses.component';
+import { ViewMycourseVideosComponent } from './pages/user/view-mycourse-videos/view-mycourse-videos.component';
+import { ViewStudyMaterialComponent } from './pages/user/view-study-material/view-study-material.component';
 
 
 const routes: Routes = [
   {
     path:'',
     component: HomeComponent,
+    pathMatch:'full',
+  },
+   {
+    path:'news',
+    component: NewsComponent,
     pathMatch:'full',
   },
   {
@@ -93,10 +105,6 @@ const routes: Routes = [
       {
         path:'profile',
         component: ProfileComponent,
-      },
-      {
-        path:'announcement',
-        component: AddAnnouncementComponent
       },
       {
         path:'categories',
@@ -182,6 +190,30 @@ const routes: Routes = [
         path:'user-home',
         component:UserHomeComponent,
       },
+      {
+        path:'news',
+        component:NewsComponent,
+      },
+      {
+        path:'courses',
+        component:ViewVideoCoursesComponent,
+      },
+      {
+        path:'courses/:cId',
+        component:ViewCourseVideosComponent,
+      },
+      {
+        path:'mycourses',
+        component:ViewMyCoursesComponent,
+      },
+      {
+        path:'studymaterials',
+        component:ViewStudyMaterialComponent,
+      },
+      {
+        path:'liveclass',
+        component:ViewClassComponent,
+      },
 
       {
         path:':catId',
@@ -195,6 +227,7 @@ const routes: Routes = [
         path:'instructions/:cid/:qid',
         component:InstructionsComponent,
       },
+
     ]
   },
   {

@@ -69,6 +69,13 @@ import { AddAnnouncementComponent } from './pages/admin/add-announcement/add-ann
 import { UpdateCoursesComponent } from './pages/admin/update-courses/update-courses.component';
 import { AddVideoUrlComponent } from './pages/admin/add-video-url/add-video-url.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ViewMyCoursesComponent } from './pages/user/view-my-courses/view-my-courses.component';
+import { ViewVideoCoursesComponent } from './pages/user/view-video-courses/view-video-courses.component';
+import { ViewCourseVideosComponent } from './pages/user/view-course-videos/view-course-videos.component';
+import { ViewMycourseVideosComponent } from './pages/user/view-mycourse-videos/view-mycourse-videos.component';
+import { ViewClassComponent } from './pages/user/view-class/view-class.component';
+import { NewsComponent } from './pages/news/news.component';
+import { ViewStudyMaterialComponent } from './pages/user/view-study-material/view-study-material.component';
 
 
 
@@ -115,6 +122,13 @@ import { AppRoutingModule } from './app-routing.module';
     UpdateCoursesComponent,
     AddVideoUrlComponent,
     AddAnnouncementComponent,
+    ViewMyCoursesComponent,
+    ViewVideoCoursesComponent,
+    ViewCourseVideosComponent,
+    ViewMycourseVideosComponent,
+    ViewClassComponent,
+    NewsComponent,
+    ViewStudyMaterialComponent,
   ],
 
   
