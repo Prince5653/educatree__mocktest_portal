@@ -1,1 +1,35 @@
-<p>buy-form works!</p>
+<mat-card class="mt10">
+  <h1 class="ml20 text-center mt10">Buying {{title}}</h1>
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <form >
+            <div class="container text-center ">
+              <img src="../../../assets/logo.png" alt="logo">
+            </div>
+
+
+
+
+            <mat-card class="card">
+
+                  <mat-card-content>
+                    Course : <b>{{title}}</b>
+                    <br>
+                    <hr>
+                    Validity : {{course.validity}} days
+                  </mat-card-content>
+
+
+
+            </mat-card>
+            <div class="container text-center mt20">
+               <button mat-raised-button color="accent"><mat-icon mat-list-icon>payments</mat-icon>₹ {{course.price}}</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

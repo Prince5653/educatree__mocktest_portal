@@ -50,6 +50,7 @@ import { ViewCourseVideosComponent } from './pages/user/view-course-videos/view-
 import { ViewMyCoursesComponent } from './pages/user/view-my-courses/view-my-courses.component';
 import { ViewMycourseVideosComponent } from './pages/user/view-mycourse-videos/view-mycourse-videos.component';
 import { ViewStudyMaterialComponent } from './pages/user/view-study-material/view-study-material.component';
+import { BuyFormComponent } from './pages/user/buy-form/buy-form.component';
 
 
 const routes: Routes = [
@@ -197,6 +198,10 @@ const routes: Routes = [
       {
         path:'courses/:courseTitle/:cId',
         component:ViewCourseVideosComponent,
+      },
+      {
+        path:'buycourse/:courseTitle/:cId',
+        component:BuyFormComponent,
       },
       {
         path:'mycourses',
