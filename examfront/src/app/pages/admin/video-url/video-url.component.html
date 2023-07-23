@@ -2,7 +2,7 @@
 <h1 class="ml20 mt10">Videos of {{courseTitle}}</h1>
 <div class="bootstrap-wrapper">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 mb20">
       <div class="container text-center">
         <button *ngIf="i != cNumberOfLectures && i < cNumberOfLectures"  [routerLink]="'/admin/add-video-url/'+cId+'/'+courseTitle+'/'+ cNumberOfLectures+'/'+i" mat-raised-button color="primary">Add URL</button>
       </div>
@@ -29,4 +29,4 @@
   </div>
 </div>
 
-{{videos | json}}
+

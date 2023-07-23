@@ -76,6 +76,7 @@ import { ViewMycourseVideosComponent } from './pages/user/view-mycourse-videos/v
 import { ViewClassComponent } from './pages/user/view-class/view-class.component';
 import { NewsComponent } from './pages/news/news.component';
 import { ViewStudyMaterialComponent } from './pages/user/view-study-material/view-study-material.component';
+import { BuyFormComponent } from './pages/user/buy-form/buy-form.component';
 
 
 
@@ -129,6 +130,7 @@ import { ViewStudyMaterialComponent } from './pages/user/view-study-material/vie
     ViewClassComponent,
     NewsComponent,
     ViewStudyMaterialComponent,
+    BuyFormComponent,
   ],
 
   
