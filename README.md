@@ -29,6 +29,8 @@ required functionalities of a mock test portal along with two different UI (Admi
       <img src="img/img_4.png" width="500" />
 </p>
 
+
+
 # Description
 - Above are UI snaps of Home,Login and Registeration pages.
 - After a successful login , sweetalert gives ID of the user.
